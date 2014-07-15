@@ -30,7 +30,6 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
                 </enricher>
             </batch:step>
             <batch:step name="findOrCreateAccountInSalesforceStep" accept-expression="'syncAccount' == '${account.sync.policy}'">
-                <logger message="AAAAAAAAAAAAAAA #[payload]" level="INFO" doc:name="Logger"/>
             
 	            <choice doc:name="Choice">
 	                	<when expression="#[payload['AccountId'] != null]">

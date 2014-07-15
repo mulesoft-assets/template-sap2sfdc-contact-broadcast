@@ -1,0 +1,284 @@
+
+**** Error file opened at 20140714 160949 Central European Summer Time Rel 3.0.7 (2011-04-20) [720.612]
+Error:  >Mon Jul 14 16:09:49,611<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+ERROR       connection to partner 'bpcserver.domain.com:sapgw14' broken
+TIME        Mon Jul 14 16:09:49 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      nixxi.cpp
+LINE        5082
+DETAIL      NiIRead: P=123.238.245.8:3314; L=192.168.2.33:55743
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error:  >Mon Jul 14 16:09:49,616<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+ERROR       connection to partner 'bpcserver.domain.com:sapgw14' broken
+TIME        Mon Jul 14 16:09:49 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      nixxi.cpp
+LINE        5082
+DETAIL      NiIRead: P=123.238.245.8:3314; L=192.168.2.33:55743
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [4] >Mon Jul 14 16:09:49,617<    RfcException: [hotovo-dell|MULESOFT]
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+ERROR       connection to partner 'bpcserver.domain.com:sapgw14' broken
+TIME        Mon Jul 14 16:09:49 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      nixxi.cpp
+LINE        5082
+DETAIL      NiIRead: P=123.238.245.8:3314; L=192.168.2.33:55743
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by hotovo-dell|MULESOFT
+
+Error:  >Mon Jul 14 16:10:12,635<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:10:12 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Mon Jul 14 16:10:12,637<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+ERROR       connection to partner 'bpcserver.domain.com:sapgw14' broken
+TIME        Mon Jul 14 16:10:12 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      nixxi.cpp
+LINE        5082
+DETAIL      NiIRead: P=123.238.245.8:3314; L=192.168.2.33:55742
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error:  >Mon Jul 14 16:10:12,637<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+ERROR       connection to partner 'bpcserver.domain.com:sapgw14' broken
+TIME        Mon Jul 14 16:10:12 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      nixxi.cpp
+LINE        5082
+DETAIL      NiIRead: P=123.238.245.8:3314; L=192.168.2.33:55742
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [3] >Mon Jul 14 16:10:12,637<    RfcException: [hotovo-dell|MULESOFT]
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+ERROR       connection to partner 'bpcserver.domain.com:sapgw14' broken
+TIME        Mon Jul 14 16:10:12 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      nixxi.cpp
+LINE        5082
+DETAIL      NiIRead: P=123.238.245.8:3314; L=192.168.2.33:55742
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by hotovo-dell|MULESOFT
+
+Error:  >Mon Jul 14 16:10:13,334<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:10:13 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10053
+ERRNO TEXT  WSAECONNABORTED: Software caused connection abort
+COUNTER     2
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Mon Jul 14 16:10:15,345<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:10:15 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     3
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Mon Jul 14 16:10:19,347<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:10:19 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     4
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Mon Jul 14 16:10:29,357<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:10:29 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     5
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Mon Jul 14 16:10:45,359<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:10:45 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     6
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Mon Jul 14 16:11:17,364<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connect parameters: TPNAME=idoc_receive GWHOST=bpcserver.domain.com GWSERV=sapgw14
+
+ERROR       partner 'bpcserver.domain.com:sapgw14' not reached
+TIME        Mon Jul 14 16:11:17 2014
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3283
+DETAIL      NiPConnect2: 123.238.245.8:3314
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     7
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
