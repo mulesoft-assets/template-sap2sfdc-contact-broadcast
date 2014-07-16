@@ -96,13 +96,13 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 	// Add target system ID as it is an update
     payload.put('Id', recordVars['contactInSalesforce']['Id'])
 }]]></expression-component>
-                <logger message="before upsert  #[payload] " level="INFO" doc:name="log before upsert"/>
+
 
                 <batch:commit size="100" doc:name="Batch Commit">
                     <sfdc:upsert config-ref="Salesforce" externalIdFieldName="Id" type="Contact" doc:name="upsert Contact in Salesforce">
                         <sfdc:objects ref="#[payload]"/>
                     </sfdc:upsert>
-                    <logger message="2222 #[payload]" level="INFO" doc:name="log result"/>
+                    <logger message="#[payload]" level="INFO" doc:name="log result"/>
                 </batch:commit>
             </batch:step>
         </batch:process-records>
