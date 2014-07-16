@@ -81,23 +81,6 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 		idsToDelete.add((String)sfContact.get("Id"));
 	}
 	
-//	private void createSapTestData() throws MuleException, Exception{
-//		String uniqueSuffix = "_" + TEMPLATE_NAME + "_" + System.currentTimeMillis();
-//		
-//		Map<String, Object> sapAccount3 = new HashMap<String, Object>();
-//		sapAccount3.put("Name", "Name_SAP" + uniqueSuffix);
-//		List<Map<String, Object>> createdAccountInSap = new ArrayList<Map<String, Object>>();
-//		createdAccountInSap.add(sapAccount3);
-//	
-//		MuleEvent event = createContactSapFlow.process(getTestEvent(createdAccountInSap, MessageExchangePattern.REQUEST_RESPONSE));
-//		System.err.println("SAP RESPONSE");
-//		System.err.println(event.getMessage().getPayload());
-//	}
-//
-//	private void deleteSapTestData(){
-//		
-//	}
-
 	private void deleteSalesforceTestData() throws MuleException, Exception{
 		MuleEvent event = deleteFromSalesforceFlow.process(getTestEvent(idsToDelete, MessageExchangePattern.REQUEST_RESPONSE));
 		System.err.println(event.getMessage().getPayload());
