@@ -38,7 +38,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
                                 <sap:outbound-endpoint exchange-pattern="request-response" connector-ref="SAP" type="function" functionName="BAPI_CUSTOMER_GETDETAIL2" xmlVersion="2" outputXml="true" evaluateFunctionResponse="true" responseTimeout="10000" doc:name="Get Customer by Number">
                                     <sap:definition><![CDATA[<jco>
 	<import>
-		<field name="CUSTOMERNO">#[org.apache.commons.lang3.StringEscapeUtils.escapeXml(payload['AccountId'])]</field>
+		<field name="CUSTOMERNO">#[payload['AccountId']]</field>
 	</import>
   	<tables>
 	</tables>
