@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version='1.0' encoding='utf-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.mule.templates</groupId>
 		<artifactId>templates-tooling-parent-pom</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 	</parent>
 
 	<artifactId>template-sap2sfdc-contact-broadcast</artifactId>
@@ -41,7 +41,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- SAP Build -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -79,10 +79,8 @@
 						<phase>package</phase>
 						<configuration>
 							<tasks>
-								<zip destfile="${project.build.directory}/${project.build.finalName}.zip"
-									update="true">
-									<zipfileset dir="${project.build.directory}/temp-native-lib"
-										prefix="lib" />
+								<zip destfile="${project.build.directory}/${project.build.finalName}.zip" update="true">
+									<zipfileset dir="${project.build.directory}/temp-native-lib" prefix="lib" />
 								</zip>
 							</tasks>
 						</configuration>
@@ -96,7 +94,7 @@
 	</build>
 
 	<dependencies>
-		<!-- Connectors -->
+		
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-sfdc</artifactId>
@@ -108,7 +106,7 @@
 			<version>${sap.version}</version>
 		</dependency>
 
-		<!-- SAP Dependencies -->
+		
 		<dependency>
 			<groupId>com.sap.conn.jco</groupId>
 			<artifactId>sapjco</artifactId>
