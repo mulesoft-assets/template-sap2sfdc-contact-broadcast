@@ -4,7 +4,7 @@
       xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
       xmlns:spring="http://www.springframework.org/schema/beans"
-      version="EE-3.5.0"
+      version="EE-3.5.2"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
@@ -36,14 +36,15 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
                         <enricher source="#[payload]" target="#[recordVars['sapCustomer']]" doc:name="store result in 'sapCustomer'">
                             <processor-chain doc:name="Processor Chain">
                                 <sap:outbound-endpoint exchange-pattern="request-response" connector-ref="SAP" type="function" functionName="BAPI_CUSTOMER_GETDETAIL2" xmlVersion="2" outputXml="true" evaluateFunctionResponse="true" responseTimeout="10000" doc:name="Get Customer by Number">
-                                    <sap:definition><![CDATA[<jco>
+                                    <sap:definition><![CDATA[<BAPI_CUSTOMER_GETDETAIL2>
 	<import>
-		<field name="CUSTOMERNO">#[payload['AccountId']]</field>
+		<CUSTOMERNO>#[payload['AccountId']]</CUSTOMERNO>
 	</import>
   	<tables>
 	</tables>
-</jco>
+</BAPI_CUSTOMER_GETDETAIL2>
 ]]></sap:definition>
+
                                 </sap:outbound-endpoint>
                                 <data-mapper:transform config-ref="XML_To_Account" doc:name="XML To Account"/>
                             </processor-chain>
