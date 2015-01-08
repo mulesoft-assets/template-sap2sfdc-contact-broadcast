@@ -1,14 +1,20 @@
 <?xml version="1.0"?>
 <configuration>
 	<placeholders>
-		<placeholder id="template_name">SAP2SFDC-contact-broadcast</placeholder>
+		<placeholder id="template_name">SAP to Salesforce Contact Broadcast</placeholder>
 	</placeholders>
 	<sections>
 		<section id="use_case">
-			Use this template if would like to sync Customer's Contacts from SAP to Salesforce Contacts in manner of push notification. 
-			Inboud SAP endpoint listens for incoming IDOC **DEBMAS01** messages including information about Customer's Contacts and transforms them to Salesforce Contacts
-			In this template you may to choose whether Account for Contact should be created as well during the process. 
-			This functionality relies on standard BAPI for retrieving details about customers **BAPI_CUSTOMER_GETDETAIL2**
+This Anypoint Template should serve as a foundation for setting an online sync of Customer's Contacts from SAP to Salesforce Contacts in manner of push notification. Every time there is a new Contact or a change in an already existing one, SAP will send the IDoc with it to the running template which will update/create a Contact in the Salesforce target instance. 
+
+Requirements have been set not only to be used as examples, but also to establish a starting point to adapt your integration to your requirements.
+
+As implemented, this Anypoint Template leverages the [Batch Module](http://www.mulesoft.org/documentation/display/current/Batch+Processing). The batch job is divided in Input, Process and On Complete stages.
+
+The integration is triggered by an inbound SAP endpoint listening for incoming IDOC **DEBMAS01** messages including information about Customer's Contacts. This XML is passed to the batch process and transformed to a Salesforce Contact.
+
+In this template you may to choose whether Account for Contact should be created as well during the process. 
+This functionality relies on a standard BAPI for retrieving details about customers: **BAPI_CUSTOMER_GETDETAIL2**
 		</section>
 		<section id="considerations">
 		<![CDATA[
@@ -30,8 +36,7 @@ These dependencies are private for Mulesoft and will cause you application not t
 		</section>
 		<section id="sap_src">
 <![CDATA[
-4. Partner profile
-Partner profile needs to be customized type of logical system as partner type. Outbound parameter of message type MATMAS is defined in the partner profile. As receiver port an RFC destination created earlier is used. Idoc Type MATMAS01 is defined.
+The Partner profile needs to have a customized type of logical system set as partner type. An outbound parameter of message type MATMAS should be defined in the partner profile. A RFC destination created earlier should be defined as Receiver Port. Idoc Type base type should be set as MATMAS01.
 ]]>
 		</section>
 		<section id="sfdc_dst">
