@@ -15,13 +15,13 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
 http://www.mulesoft.org/schema/mule/sap http://www.mulesoft.org/schema/mule/sap/current/mule-sap.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd">
-    <data-mapper:config name="XML_To_Contact" transformationGraphPath="xml_to_contact.grf" doc:name="XML_To_Contact"/>
     <data-mapper:config name="XML_To_Account" transformationGraphPath="xml_to_account.grf" doc:name="XML_To_Account"/>
+    <data-mapper:config name="XML_To_Contact_1" transformationGraphPath="xml_to_contact_1.grf" doc:name="XML_To_Contact_1"/>
 
     <batch:job name="syncContactBatch">
         <batch:threading-profile poolExhaustedAction="WAIT"/>
         <batch:input>
-            <data-mapper:transform config-ref="XML_To_Contact" doc:name="XML To Contact"/>
+            <data-mapper:transform doc:name="XML To Contact" config-ref="XML_To_Contact_1"/>                        
         </batch:input>
         <batch:process-records>
             <batch:step name="getContactInSalesforceStep">
@@ -44,6 +44,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 	</tables>
 </BAPI_CUSTOMER_GETDETAIL2>
 ]]></sap:definition>
+
 
                                 </sap:outbound-endpoint>
                                 <data-mapper:transform config-ref="XML_To_Account" doc:name="XML To Account"/>

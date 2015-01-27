@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="Admin" created="Tue Jan 27 09:17:25 CET 2015" description="XML To Contact" guiVersion="3.4.4.P" id="1422352998333" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue Jan 27 09:17:25 CET 2015" modifiedBy="Admin" name="XML_To_Contact_1" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/Contact" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Output" id="b3b4bc55-10ce-4252-b83b-471c454f76ba">
+<Record fieldDelimiter="," name="Contact" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __implementationClass="java.lang.String" __index="20" __sourcePath="{}/Contact/AccountId" containerType="SINGLE" label="AccountId" name="AccountId" type="string"/>
+<Field __implementationClass="java.lang.String" __index="11" __sourcePath="{}/Contact/AssistantName" containerType="SINGLE" label="AssistantName" name="AssistantName" type="string"/>
+<Field __implementationClass="java.lang.String" __index="51" __sourcePath="{}/Contact/AssistantPhone" containerType="SINGLE" label="AssistantPhone" name="AssistantPhone" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="40" __sourcePath="{}/Contact/Birthdate" containerType="SINGLE" label="Birthdate" name="Birthdate" type="string"/>
+<Field __index="22" __sourcePath="{}/Contact/CleanStatus" containerType="SINGLE" label="CleanStatus" name="CleanStatus" type="string"/>
+<Field __implementationClass="java.lang.String" __index="23" __sourcePath="{}/Contact/CreatedById" containerType="SINGLE" label="CreatedById" name="CreatedById" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="57" __sourcePath="{}/Contact/CreatedDate" containerType="SINGLE" label="CreatedDate" name="CreatedDate" type="string"/>
+<Field __implementationClass="java.lang.String" __index="43" __sourcePath="{}/Contact/Department" containerType="SINGLE" label="Department" name="Department" type="string"/>
+<Field __implementationClass="java.lang.String" __index="46" __sourcePath="{}/Contact/Description" containerType="SINGLE" label="Description" name="Description" type="string"/>
+<Field __implementationClass="java.lang.String" __index="21" __sourcePath="{}/Contact/Email" containerType="SINGLE" label="Email" name="Email" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="29" __sourcePath="{}/Contact/EmailBouncedDate" containerType="SINGLE" label="EmailBouncedDate" name="EmailBouncedDate" type="string"/>
+<Field __implementationClass="java.lang.String" __index="19" __sourcePath="{}/Contact/EmailBouncedReason" containerType="SINGLE" label="EmailBouncedReason" name="EmailBouncedReason" type="string"/>
+<Field __implementationClass="java.lang.String" __index="50" __sourcePath="{}/Contact/Fax" containerType="SINGLE" label="Fax" name="Fax" type="string"/>
+<Field __implementationClass="java.lang.String" __index="39" __sourcePath="{}/Contact/FirstName" containerType="SINGLE" label="FirstName" name="FirstName" type="string"/>
+<Field __implementationClass="java.lang.String" __index="5" __sourcePath="{}/Contact/HomePhone" containerType="SINGLE" label="HomePhone" name="HomePhone" type="string"/>
+<Field __implementationClass="java.lang.String" __index="26" __sourcePath="{}/Contact/Id" containerType="SINGLE" label="Id" name="Id" type="string"/>
+<Field __implementationClass="java.lang.Boolean" __index="25" __sourcePath="{}/Contact/IsDeleted" containerType="SINGLE" label="IsDeleted" name="IsDeleted" type="boolean"/>
+<Field __implementationClass="java.lang.Boolean" __index="44" __sourcePath="{}/Contact/IsEmailBounced" containerType="SINGLE" label="IsEmailBounced" name="IsEmailBounced" type="boolean"/>
+<Field __implementationClass="java.lang.String" __index="12" __sourcePath="{}/Contact/Jigsaw" containerType="SINGLE" label="Jigsaw" name="Jigsaw" type="string"/>
+<Field __implementationClass="java.lang.String" __index="55" __sourcePath="{}/Contact/JigsawContactId" containerType="SINGLE" label="JigsawContactId" name="JigsawContactId" type="string"/>
+<Field __implementationClass="java.lang.String" __index="0" __sourcePath="{}/Contact/Languages_x005f_x005fc" containerType="SINGLE" label="Languages__c" name="Languages__c" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="32" __sourcePath="{}/Contact/LastActivityDate" containerType="SINGLE" label="LastActivityDate" name="LastActivityDate" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="6" __sourcePath="{}/Contact/LastCURequestDate" containerType="SINGLE" label="LastCURequestDate" name="LastCURequestDate" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="15" __sourcePath="{}/Contact/LastCUUpdateDate" containerType="SINGLE" label="LastCUUpdateDate" name="LastCUUpdateDate" type="string"/>
+<Field __implementationClass="java.lang.String" __index="49" __sourcePath="{}/Contact/LastModifiedById" containerType="SINGLE" label="LastModifiedById" name="LastModifiedById" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="1" __sourcePath="{}/Contact/LastModifiedDate" containerType="SINGLE" label="LastModifiedDate" name="LastModifiedDate" type="string"/>
+<Field __implementationClass="java.lang.String" __index="3" __sourcePath="{}/Contact/LastName" containerType="SINGLE" label="LastName" name="LastName" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="47" __sourcePath="{}/Contact/LastReferencedDate" containerType="SINGLE" label="LastReferencedDate" name="LastReferencedDate" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="17" __sourcePath="{}/Contact/LastViewedDate" containerType="SINGLE" label="LastViewedDate" name="LastViewedDate" type="string"/>
+<Field __index="2" __sourcePath="{}/Contact/LeadSource" containerType="SINGLE" label="LeadSource" name="LeadSource" type="string"/>
+<Field __index="31" __sourcePath="{}/Contact/Level_x005f_x005fc" containerType="SINGLE" label="Level__c" name="Level__c" type="string"/>
+<Field __implementationClass="java.lang.String" __index="16" __sourcePath="{}/Contact/MailingAddress" containerType="SINGLE" label="MailingAddress" name="MailingAddress" type="string"/>
+<Field __implementationClass="java.lang.String" __index="35" __sourcePath="{}/Contact/MailingCity" containerType="SINGLE" label="MailingCity" name="MailingCity" type="string"/>
+<Field __implementationClass="java.lang.String" __index="37" __sourcePath="{}/Contact/MailingCountry" containerType="SINGLE" label="MailingCountry" name="MailingCountry" type="string"/>
+<Field __implementationClass="java.lang.Double" __index="18" __sourcePath="{}/Contact/MailingLatitude" containerType="SINGLE" label="MailingLatitude" name="MailingLatitude" type="number"/>
+<Field __implementationClass="java.lang.Double" __index="10" __sourcePath="{}/Contact/MailingLongitude" containerType="SINGLE" label="MailingLongitude" name="MailingLongitude" type="number"/>
+<Field __implementationClass="java.lang.String" __index="38" __sourcePath="{}/Contact/MailingPostalCode" containerType="SINGLE" label="MailingPostalCode" name="MailingPostalCode" type="string"/>
+<Field __implementationClass="java.lang.String" __index="33" __sourcePath="{}/Contact/MailingState" containerType="SINGLE" label="MailingState" name="MailingState" type="string"/>
+<Field __implementationClass="java.lang.String" __index="8" __sourcePath="{}/Contact/MailingStreet" containerType="SINGLE" label="MailingStreet" name="MailingStreet" type="string"/>
+<Field __implementationClass="java.lang.String" __index="53" __sourcePath="{}/Contact/MasterRecordId" containerType="SINGLE" label="MasterRecordId" name="MasterRecordId" type="string"/>
+<Field __implementationClass="java.lang.String" __index="9" __sourcePath="{}/Contact/MobilePhone" containerType="SINGLE" label="MobilePhone" name="MobilePhone" type="string"/>
+<Field __implementationClass="java.lang.String" __index="54" __sourcePath="{}/Contact/Name" containerType="SINGLE" label="Name" name="Name" type="string"/>
+<Field __implementationClass="java.lang.String" __index="28" __sourcePath="{}/Contact/OtherAddress" containerType="SINGLE" label="OtherAddress" name="OtherAddress" type="string"/>
+<Field __implementationClass="java.lang.String" __index="13" __sourcePath="{}/Contact/OtherCity" containerType="SINGLE" label="OtherCity" name="OtherCity" type="string"/>
+<Field __implementationClass="java.lang.String" __index="56" __sourcePath="{}/Contact/OtherCountry" containerType="SINGLE" label="OtherCountry" name="OtherCountry" type="string"/>
+<Field __implementationClass="java.lang.Double" __index="45" __sourcePath="{}/Contact/OtherLatitude" containerType="SINGLE" label="OtherLatitude" name="OtherLatitude" type="number"/>
+<Field __implementationClass="java.lang.Double" __index="7" __sourcePath="{}/Contact/OtherLongitude" containerType="SINGLE" label="OtherLongitude" name="OtherLongitude" type="number"/>
+<Field __implementationClass="java.lang.String" __index="34" __sourcePath="{}/Contact/OtherPhone" containerType="SINGLE" label="OtherPhone" name="OtherPhone" type="string"/>
+<Field __implementationClass="java.lang.String" __index="4" __sourcePath="{}/Contact/OtherPostalCode" containerType="SINGLE" label="OtherPostalCode" name="OtherPostalCode" type="string"/>
+<Field __implementationClass="java.lang.String" __index="24" __sourcePath="{}/Contact/OtherState" containerType="SINGLE" label="OtherState" name="OtherState" type="string"/>
+<Field __implementationClass="java.lang.String" __index="42" __sourcePath="{}/Contact/OtherStreet" containerType="SINGLE" label="OtherStreet" name="OtherStreet" type="string"/>
+<Field __implementationClass="java.lang.String" __index="30" __sourcePath="{}/Contact/OwnerId" containerType="SINGLE" label="OwnerId" name="OwnerId" type="string"/>
+<Field __implementationClass="java.lang.String" __index="27" __sourcePath="{}/Contact/Phone" containerType="SINGLE" label="Phone" name="Phone" type="string"/>
+<Field __implementationClass="java.lang.String" __index="41" __sourcePath="{}/Contact/PhotoUrl" containerType="SINGLE" label="PhotoUrl" name="PhotoUrl" type="string"/>
+<Field __implementationClass="java.lang.String" __index="48" __sourcePath="{}/Contact/ReportsToId" containerType="SINGLE" label="ReportsToId" name="ReportsToId" type="string"/>
+<Field __index="14" __sourcePath="{}/Contact/Salutation" containerType="SINGLE" label="Salutation" name="Salutation" type="string"/>
+<Field __dmType="Calendar" __implementationClass="java.util.Calendar" __index="36" __sourcePath="{}/Contact/SystemModstamp" containerType="SINGLE" label="SystemModstamp" name="SystemModstamp" type="string"/>
+<Field __implementationClass="java.lang.String" __index="52" __sourcePath="{}/Contact/Title" containerType="SINGLE" label="Title" name="Title" type="string"/>
+</Record>
+</Metadata>
+<Metadata __filteredMetadata="true" __index="0" __referenceCounter="0" __sourcePath="{}/DEBMAS01" _dataStructure="OBJECT" _id="__id" _type="Input" id="41c527a2-a4e4-49cd-9971-9413f960cdb7">
+<Record fieldDelimiter="," name="DEBMAS01" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/MSGFN" containerType="SINGLE" label="MSGFN" name="MSGFN" type="string"/>
+<Field __index="1" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KUNNR" containerType="SINGLE" label="KUNNR" name="KUNNR" type="string"/>
+<Field __index="2" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/ANRED" containerType="SINGLE" label="ANRED" name="ANRED" type="string"/>
+<Field __index="3" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/AUFSD" containerType="SINGLE" label="AUFSD" name="AUFSD" type="string"/>
+<Field __index="4" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BAHNE" containerType="SINGLE" label="BAHNE" name="BAHNE" type="string"/>
+<Field __index="5" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BAHNS" containerType="SINGLE" label="BAHNS" name="BAHNS" type="string"/>
+<Field __index="6" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BBBNR" containerType="SINGLE" label="BBBNR" name="BBBNR" type="string"/>
+<Field __index="7" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BBSNR" containerType="SINGLE" label="BBSNR" name="BBSNR" type="string"/>
+<Field __index="8" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BEGRU" containerType="SINGLE" label="BEGRU" name="BEGRU" type="string"/>
+<Field __index="9" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BRSCH" containerType="SINGLE" label="BRSCH" name="BRSCH" type="string"/>
+<Field __index="10" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BUBKZ" containerType="SINGLE" label="BUBKZ" name="BUBKZ" type="string"/>
+<Field __index="11" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/DATLT" containerType="SINGLE" label="DATLT" name="DATLT" type="string"/>
+<Field __index="12" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/FAKSD" containerType="SINGLE" label="FAKSD" name="FAKSD" type="string"/>
+<Field __index="13" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/FISKN" containerType="SINGLE" label="FISKN" name="FISKN" type="string"/>
+<Field __index="14" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KNRZA" containerType="SINGLE" label="KNRZA" name="KNRZA" type="string"/>
+<Field __index="15" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KONZS" containerType="SINGLE" label="KONZS" name="KONZS" type="string"/>
+<Field __index="16" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KTOKD" containerType="SINGLE" label="KTOKD" name="KTOKD" type="string"/>
+<Field __index="17" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KUKLA" containerType="SINGLE" label="KUKLA" name="KUKLA" type="string"/>
+<Field __index="18" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/LAND1" containerType="SINGLE" label="LAND1" name="LAND1" type="string"/>
+<Field __index="19" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/LIFNR" containerType="SINGLE" label="LIFNR" name="LIFNR" type="string"/>
+<Field __index="20" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/LIFSD" containerType="SINGLE" label="LIFSD" name="LIFSD" type="string"/>
+<Field __index="21" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/LOCCO" containerType="SINGLE" label="LOCCO" name="LOCCO" type="string"/>
+<Field __index="22" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/LOEVM" containerType="SINGLE" label="LOEVM" name="LOEVM" type="string"/>
+<Field __index="23" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NAMEV" containerType="SINGLE" label="NAMEV" name="NAMEV" type="string"/>
+<Field __index="24" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NAME1" containerType="SINGLE" label="NAME1" name="NAME1" type="string"/>
+<Field __index="25" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NAME2" containerType="SINGLE" label="NAME2" name="NAME2" type="string"/>
+<Field __index="26" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NAME3" containerType="SINGLE" label="NAME3" name="NAME3" type="string"/>
+<Field __index="27" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NAME4" containerType="SINGLE" label="NAME4" name="NAME4" type="string"/>
+<Field __index="28" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NIELS" containerType="SINGLE" label="NIELS" name="NIELS" type="string"/>
+<Field __index="29" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/ORT01" containerType="SINGLE" label="ORT01" name="ORT01" type="string"/>
+<Field __index="30" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/ORT02" containerType="SINGLE" label="ORT02" name="ORT02" type="string"/>
+<Field __index="31" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/PFACH" containerType="SINGLE" label="PFACH" name="PFACH" type="string"/>
+<Field __index="32" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/PSTL2" containerType="SINGLE" label="PSTL2" name="PSTL2" type="string"/>
+<Field __index="33" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/PSTLZ" containerType="SINGLE" label="PSTLZ" name="PSTLZ" type="string"/>
+<Field __index="34" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/REGIO" containerType="SINGLE" label="REGIO" name="REGIO" type="string"/>
+<Field __index="35" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/COUNC" containerType="SINGLE" label="COUNC" name="COUNC" type="string"/>
+<Field __index="36" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CITYC" containerType="SINGLE" label="CITYC" name="CITYC" type="string"/>
+<Field __index="37" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/RPMKR" containerType="SINGLE" label="RPMKR" name="RPMKR" type="string"/>
+<Field __index="38" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/SORTL" containerType="SINGLE" label="SORTL" name="SORTL" type="string"/>
+<Field __index="39" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/SPERR" containerType="SINGLE" label="SPERR" name="SPERR" type="string"/>
+<Field __index="40" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/SPRAS" containerType="SINGLE" label="SPRAS" name="SPRAS" type="string"/>
+<Field __index="41" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STCD1" containerType="SINGLE" label="STCD1" name="STCD1" type="string"/>
+<Field __index="42" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STCD2" containerType="SINGLE" label="STCD2" name="STCD2" type="string"/>
+<Field __index="43" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STKZA" containerType="SINGLE" label="STKZA" name="STKZA" type="string"/>
+<Field __index="44" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STKZU" containerType="SINGLE" label="STKZU" name="STKZU" type="string"/>
+<Field __index="45" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STRAS" containerType="SINGLE" label="STRAS" name="STRAS" type="string"/>
+<Field __index="46" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TELBX" containerType="SINGLE" label="TELBX" name="TELBX" type="string"/>
+<Field __index="47" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TELF1" containerType="SINGLE" label="TELF1" name="TELF1" type="string"/>
+<Field __index="48" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TELF2" containerType="SINGLE" label="TELF2" name="TELF2" type="string"/>
+<Field __index="49" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TELFX" containerType="SINGLE" label="TELFX" name="TELFX" type="string"/>
+<Field __index="50" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TELTX" containerType="SINGLE" label="TELTX" name="TELTX" type="string"/>
+<Field __index="51" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TELX1" containerType="SINGLE" label="TELX1" name="TELX1" type="string"/>
+<Field __index="52" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/LZONE" containerType="SINGLE" label="LZONE" name="LZONE" type="string"/>
+<Field __index="53" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/XZEMP" containerType="SINGLE" label="XZEMP" name="XZEMP" type="string"/>
+<Field __index="54" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/VBUND" containerType="SINGLE" label="VBUND" name="VBUND" type="string"/>
+<Field __index="55" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STCEG" containerType="SINGLE" label="STCEG" name="STCEG" type="string"/>
+<Field __index="56" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/GFORM" containerType="SINGLE" label="GFORM" name="GFORM" type="string"/>
+<Field __index="57" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BRAN1" containerType="SINGLE" label="BRAN1" name="BRAN1" type="string"/>
+<Field __index="58" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BRAN2" containerType="SINGLE" label="BRAN2" name="BRAN2" type="string"/>
+<Field __index="59" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BRAN3" containerType="SINGLE" label="BRAN3" name="BRAN3" type="string"/>
+<Field __index="60" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BRAN4" containerType="SINGLE" label="BRAN4" name="BRAN4" type="string"/>
+<Field __index="61" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/BRAN5" containerType="SINGLE" label="BRAN5" name="BRAN5" type="string"/>
+<Field __index="62" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/UMJAH" containerType="SINGLE" label="UMJAH" name="UMJAH" type="string"/>
+<Field __index="63" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/UWAER" containerType="SINGLE" label="UWAER" name="UWAER" type="string"/>
+<Field __index="64" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/JMZAH" containerType="SINGLE" label="JMZAH" name="JMZAH" type="string"/>
+<Field __index="65" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/JMJAH" containerType="SINGLE" label="JMJAH" name="JMJAH" type="string"/>
+<Field __index="66" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR1" containerType="SINGLE" label="KATR1" name="KATR1" type="string"/>
+<Field __index="67" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR2" containerType="SINGLE" label="KATR2" name="KATR2" type="string"/>
+<Field __index="68" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR3" containerType="SINGLE" label="KATR3" name="KATR3" type="string"/>
+<Field __index="69" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR4" containerType="SINGLE" label="KATR4" name="KATR4" type="string"/>
+<Field __index="70" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR5" containerType="SINGLE" label="KATR5" name="KATR5" type="string"/>
+<Field __index="71" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR6" containerType="SINGLE" label="KATR6" name="KATR6" type="string"/>
+<Field __index="72" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR7" containerType="SINGLE" label="KATR7" name="KATR7" type="string"/>
+<Field __index="73" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR8" containerType="SINGLE" label="KATR8" name="KATR8" type="string"/>
+<Field __index="74" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR9" containerType="SINGLE" label="KATR9" name="KATR9" type="string"/>
+<Field __index="75" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KATR10" containerType="SINGLE" label="KATR10" name="KATR10" type="string"/>
+<Field __index="76" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STKZN" containerType="SINGLE" label="STKZN" name="STKZN" type="string"/>
+<Field __index="77" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/UMSA1" containerType="SINGLE" label="UMSA1" name="UMSA1" type="string"/>
+<Field __index="78" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TXJCD" containerType="SINGLE" label="TXJCD" name="TXJCD" type="string"/>
+<Field __index="79" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/PERIV" containerType="SINGLE" label="PERIV" name="PERIV" type="string"/>
+<Field __index="80" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KTOCD" containerType="SINGLE" label="KTOCD" name="KTOCD" type="string"/>
+<Field __index="81" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/PFORT" containerType="SINGLE" label="PFORT" name="PFORT" type="string"/>
+<Field __index="82" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/DTAMS" containerType="SINGLE" label="DTAMS" name="DTAMS" type="string"/>
+<Field __index="83" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/DTAWS" containerType="SINGLE" label="DTAWS" name="DTAWS" type="string"/>
+<Field __index="84" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/HZUOR" containerType="SINGLE" label="HZUOR" name="HZUOR" type="string"/>
+<Field __index="85" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CIVVE" containerType="SINGLE" label="CIVVE" name="CIVVE" type="string"/>
+<Field __index="86" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/MILVE" containerType="SINGLE" label="MILVE" name="MILVE" type="string"/>
+<Field __index="87" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/SPRAS_ISO" containerType="SINGLE" label="SPRAS_ISO" name="SPRAS_ISO" type="string"/>
+<Field __index="88" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/FITYP" containerType="SINGLE" label="FITYP" name="FITYP" type="string"/>
+<Field __index="89" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STCDT" containerType="SINGLE" label="STCDT" name="STCDT" type="string"/>
+<Field __index="90" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STCD3" containerType="SINGLE" label="STCD3" name="STCD3" type="string"/>
+<Field __index="91" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/STCD4" containerType="SINGLE" label="STCD4" name="STCD4" type="string"/>
+<Field __index="92" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/XICMS" containerType="SINGLE" label="XICMS" name="XICMS" type="string"/>
+<Field __index="93" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/XXIPI" containerType="SINGLE" label="XXIPI" name="XXIPI" type="string"/>
+<Field __index="94" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/XSUBT" containerType="SINGLE" label="XSUBT" name="XSUBT" type="string"/>
+<Field __index="95" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CFOPC" containerType="SINGLE" label="CFOPC" name="CFOPC" type="string"/>
+<Field __index="96" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TXLW1" containerType="SINGLE" label="TXLW1" name="TXLW1" type="string"/>
+<Field __index="97" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/TXLW2" containerType="SINGLE" label="TXLW2" name="TXLW2" type="string"/>
+<Field __index="98" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CCC01" containerType="SINGLE" label="CCC01" name="CCC01" type="string"/>
+<Field __index="99" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CCC02" containerType="SINGLE" label="CCC02" name="CCC02" type="string"/>
+<Field __index="100" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CCC03" containerType="SINGLE" label="CCC03" name="CCC03" type="string"/>
+<Field __index="101" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CCC04" containerType="SINGLE" label="CCC04" name="CCC04" type="string"/>
+<Field __index="102" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/CASSD" containerType="SINGLE" label="CASSD" name="CASSD" type="string"/>
+<Field __index="103" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KDKG1" containerType="SINGLE" label="KDKG1" name="KDKG1" type="string"/>
+<Field __index="104" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KDKG2" containerType="SINGLE" label="KDKG2" name="KDKG2" type="string"/>
+<Field __index="105" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KDKG3" containerType="SINGLE" label="KDKG3" name="KDKG3" type="string"/>
+<Field __index="106" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KDKG4" containerType="SINGLE" label="KDKG4" name="KDKG4" type="string"/>
+<Field __index="107" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/KDKG5" containerType="SINGLE" label="KDKG5" name="KDKG5" type="string"/>
+<Field __index="108" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/NODEL" containerType="SINGLE" label="NODEL" name="NODEL" type="string"/>
+<Field __index="109" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/XSUB2" containerType="SINGLE" label="XSUB2" name="XSUB2" type="string"/>
+<Field __index="110" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/WERKS" containerType="SINGLE" label="WERKS" name="WERKS" type="string"/>
+<Field __index="175" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/@SEGMENT" containerType="SINGLE" label="SEGMENT" name="SEGMENT" type="string"/>
+<Field __index="176" __sourcePath="{}/DEBMAS01/IDOC/@BEGIN" containerType="SINGLE" label="BEGIN" name="BEGIN" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="111" __referenceCounter="1" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="41c527a2-a4e4-49cd-9971-9413f960cdb7" _parent_id="__parent_id" _type="Input" id="510bf5f8-eb55-4844-b86a-e63558a290ec">
+<Record fieldDelimiter="," name="E1KNVKM" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="111" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MSGFN" containerType="SINGLE" label="MSGFN" name="MSGFN" type="string"/>
+<Field __index="112" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARNR" containerType="SINGLE" label="PARNR" name="PARNR" type="string"/>
+<Field __index="113" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/NAMEV" containerType="SINGLE" label="NAMEV" name="NAMEV" type="string"/>
+<Field __index="114" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/NAME1" containerType="SINGLE" label="NAME1" name="NAME1" type="string"/>
+<Field __index="115" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/ABTPA" containerType="SINGLE" label="ABTPA" name="ABTPA" type="string"/>
+<Field __index="116" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/ABTNR" containerType="SINGLE" label="ABTNR" name="ABTNR" type="string"/>
+<Field __index="117" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/UEPAR" containerType="SINGLE" label="UEPAR" name="UEPAR" type="string"/>
+<Field __index="118" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/TELF1" containerType="SINGLE" label="TELF1" name="TELF1" type="string"/>
+<Field __index="119" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/ANRED" containerType="SINGLE" label="ANRED" name="ANRED" type="string"/>
+<Field __index="120" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAFKT" containerType="SINGLE" label="PAFKT" name="PAFKT" type="string"/>
+<Field __index="121" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARVO" containerType="SINGLE" label="PARVO" name="PARVO" type="string"/>
+<Field __index="122" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAVIP" containerType="SINGLE" label="PAVIP" name="PAVIP" type="string"/>
+<Field __index="123" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARGE" containerType="SINGLE" label="PARGE" name="PARGE" type="string"/>
+<Field __index="124" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARLA" containerType="SINGLE" label="PARLA" name="PARLA" type="string"/>
+<Field __index="125" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/GBDAT" containerType="SINGLE" label="GBDAT" name="GBDAT" type="string"/>
+<Field __index="126" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/VRTNR" containerType="SINGLE" label="VRTNR" name="VRTNR" type="string"/>
+<Field __index="127" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/BRYTH" containerType="SINGLE" label="BRYTH" name="BRYTH" type="string"/>
+<Field __index="128" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/AKVER" containerType="SINGLE" label="AKVER" name="AKVER" type="string"/>
+<Field __index="129" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/NMAIL" containerType="SINGLE" label="NMAIL" name="NMAIL" type="string"/>
+<Field __index="130" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARAU" containerType="SINGLE" label="PARAU" name="PARAU" type="string"/>
+<Field __index="131" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARH1" containerType="SINGLE" label="PARH1" name="PARH1" type="string"/>
+<Field __index="132" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARH2" containerType="SINGLE" label="PARH2" name="PARH2" type="string"/>
+<Field __index="133" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARH3" containerType="SINGLE" label="PARH3" name="PARH3" type="string"/>
+<Field __index="134" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARH4" containerType="SINGLE" label="PARH4" name="PARH4" type="string"/>
+<Field __index="135" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARH5" containerType="SINGLE" label="PARH5" name="PARH5" type="string"/>
+<Field __index="136" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MOAB1" containerType="SINGLE" label="MOAB1" name="MOAB1" type="string"/>
+<Field __index="137" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MOBI1" containerType="SINGLE" label="MOBI1" name="MOBI1" type="string"/>
+<Field __index="138" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MOAB2" containerType="SINGLE" label="MOAB2" name="MOAB2" type="string"/>
+<Field __index="139" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MOBI2" containerType="SINGLE" label="MOBI2" name="MOBI2" type="string"/>
+<Field __index="140" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DIAB1" containerType="SINGLE" label="DIAB1" name="DIAB1" type="string"/>
+<Field __index="141" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DIBI1" containerType="SINGLE" label="DIBI1" name="DIBI1" type="string"/>
+<Field __index="142" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DIAB2" containerType="SINGLE" label="DIAB2" name="DIAB2" type="string"/>
+<Field __index="143" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DIBI2" containerType="SINGLE" label="DIBI2" name="DIBI2" type="string"/>
+<Field __index="144" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MIAB1" containerType="SINGLE" label="MIAB1" name="MIAB1" type="string"/>
+<Field __index="145" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MIBI1" containerType="SINGLE" label="MIBI1" name="MIBI1" type="string"/>
+<Field __index="146" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MIAB2" containerType="SINGLE" label="MIAB2" name="MIAB2" type="string"/>
+<Field __index="147" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/MIBI2" containerType="SINGLE" label="MIBI2" name="MIBI2" type="string"/>
+<Field __index="148" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DOAB1" containerType="SINGLE" label="DOAB1" name="DOAB1" type="string"/>
+<Field __index="149" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DOBI1" containerType="SINGLE" label="DOBI1" name="DOBI1" type="string"/>
+<Field __index="150" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DOAB2" containerType="SINGLE" label="DOAB2" name="DOAB2" type="string"/>
+<Field __index="151" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/DOBI2" containerType="SINGLE" label="DOBI2" name="DOBI2" type="string"/>
+<Field __index="152" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/FRAB1" containerType="SINGLE" label="FRAB1" name="FRAB1" type="string"/>
+<Field __index="153" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/FRBI1" containerType="SINGLE" label="FRBI1" name="FRBI1" type="string"/>
+<Field __index="154" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/FRAB2" containerType="SINGLE" label="FRAB2" name="FRAB2" type="string"/>
+<Field __index="155" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/FRBI2" containerType="SINGLE" label="FRBI2" name="FRBI2" type="string"/>
+<Field __index="156" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SAAB1" containerType="SINGLE" label="SAAB1" name="SAAB1" type="string"/>
+<Field __index="157" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SABI1" containerType="SINGLE" label="SABI1" name="SABI1" type="string"/>
+<Field __index="158" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SAAB2" containerType="SINGLE" label="SAAB2" name="SAAB2" type="string"/>
+<Field __index="159" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SABI2" containerType="SINGLE" label="SABI2" name="SABI2" type="string"/>
+<Field __index="160" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SOAB1" containerType="SINGLE" label="SOAB1" name="SOAB1" type="string"/>
+<Field __index="161" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SOBI1" containerType="SINGLE" label="SOBI1" name="SOBI1" type="string"/>
+<Field __index="162" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SOAB2" containerType="SINGLE" label="SOAB2" name="SOAB2" type="string"/>
+<Field __index="163" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SOBI2" containerType="SINGLE" label="SOBI2" name="SOBI2" type="string"/>
+<Field __index="164" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAKN1" containerType="SINGLE" label="PAKN1" name="PAKN1" type="string"/>
+<Field __index="165" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAKN2" containerType="SINGLE" label="PAKN2" name="PAKN2" type="string"/>
+<Field __index="166" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAKN3" containerType="SINGLE" label="PAKN3" name="PAKN3" type="string"/>
+<Field __index="167" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAKN4" containerType="SINGLE" label="PAKN4" name="PAKN4" type="string"/>
+<Field __index="168" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PAKN5" containerType="SINGLE" label="PAKN5" name="PAKN5" type="string"/>
+<Field __index="169" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SORTL" containerType="SINGLE" label="SORTL" name="SORTL" type="string"/>
+<Field __index="170" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/FAMST" containerType="SINGLE" label="FAMST" name="FAMST" type="string"/>
+<Field __index="171" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/SPNAM" containerType="SINGLE" label="SPNAM" name="SPNAM" type="string"/>
+<Field __index="172" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/TITEL_AP" containerType="SINGLE" label="TITEL_AP" name="TITEL_AP" type="string"/>
+<Field __index="173" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/PARLA_ISO" containerType="SINGLE" label="PARLA_ISO" name="PARLA_ISO" type="string"/>
+<Field __index="174" __sourcePath="{}/DEBMAS01/IDOC/E1KNA1M/E1KNVKM/@SEGMENT" containerType="SINGLE" label="SEGMENT" name="SEGMENT" type="string"/>
+<Field __artificialType="XPATH" __xpath="{=}/../KUNNR" containerType="SINGLE" label="AccountIdRule" name="AccountIdRule" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" guiName="Foreach 'E1KNVKM' -&gt; 'Contact'" guiX="460" guiY="120" id="FOREACH_E1KNVKM_CONTACT" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+//END -> DO NOT REMOVE
+output.FirstName = input.NAMEV;
+output.LastName = input.NAME1;
+output.AccountId = input.AccountIdRule;]]></attr>
+</Node>
+<Node cacheInMemory="true" enabled="enabled" fileURL="dict:outputPayload" guiName="Map&lt;k,v&gt; WRITER" guiX="900" guiY="20" id="MAP_WRITER0" type="MAP_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<clover:collection clover:name="Contact" xmlns:clover="http://www.cloveretl.com/ns/xmlmapping">
+  <item clover:inPort="0">
+    <clover:element clover:name="Languages__c" clover:dataType="java.lang.String">$0.Languages__c</clover:element>
+    <LastModifiedDate clover:dataType="java.util.Calendar">$0.LastModifiedDate</LastModifiedDate>
+    <LeadSource>$0.LeadSource</LeadSource>
+    <LastName clover:dataType="java.lang.String">$0.LastName</LastName>
+    <OtherPostalCode clover:dataType="java.lang.String">$0.OtherPostalCode</OtherPostalCode>
+    <HomePhone clover:dataType="java.lang.String">$0.HomePhone</HomePhone>
+    <LastCURequestDate clover:dataType="java.util.Calendar">$0.LastCURequestDate</LastCURequestDate>
+    <OtherLongitude clover:dataType="java.lang.Double">$0.OtherLongitude</OtherLongitude>
+    <MailingStreet clover:dataType="java.lang.String">$0.MailingStreet</MailingStreet>
+    <MobilePhone clover:dataType="java.lang.String">$0.MobilePhone</MobilePhone>
+    <MailingLongitude clover:dataType="java.lang.Double">$0.MailingLongitude</MailingLongitude>
+    <AssistantName clover:dataType="java.lang.String">$0.AssistantName</AssistantName>
+    <Jigsaw clover:dataType="java.lang.String">$0.Jigsaw</Jigsaw>
+    <OtherCity clover:dataType="java.lang.String">$0.OtherCity</OtherCity>
+    <Salutation>$0.Salutation</Salutation>
+    <LastCUUpdateDate clover:dataType="java.util.Calendar">$0.LastCUUpdateDate</LastCUUpdateDate>
+    <MailingAddress clover:dataType="java.lang.String">$0.MailingAddress</MailingAddress>
+    <LastViewedDate clover:dataType="java.util.Calendar">$0.LastViewedDate</LastViewedDate>
+    <MailingLatitude clover:dataType="java.lang.Double">$0.MailingLatitude</MailingLatitude>
+    <EmailBouncedReason clover:dataType="java.lang.String">$0.EmailBouncedReason</EmailBouncedReason>
+    <AccountId clover:dataType="java.lang.String">$0.AccountId</AccountId>
+    <Email clover:dataType="java.lang.String">$0.Email</Email>
+    <CleanStatus>$0.CleanStatus</CleanStatus>
+    <CreatedById clover:dataType="java.lang.String">$0.CreatedById</CreatedById>
+    <OtherState clover:dataType="java.lang.String">$0.OtherState</OtherState>
+    <IsDeleted clover:dataType="java.lang.Boolean">$0.IsDeleted</IsDeleted>
+    <Id clover:dataType="java.lang.String">$0.Id</Id>
+    <Phone clover:dataType="java.lang.String">$0.Phone</Phone>
+    <OtherAddress clover:dataType="java.lang.String">$0.OtherAddress</OtherAddress>
+    <EmailBouncedDate clover:dataType="java.util.Calendar">$0.EmailBouncedDate</EmailBouncedDate>
+    <OwnerId clover:dataType="java.lang.String">$0.OwnerId</OwnerId>
+    <clover:element clover:name="Level__c">$0.Level__c</clover:element>
+    <LastActivityDate clover:dataType="java.util.Calendar">$0.LastActivityDate</LastActivityDate>
+    <MailingState clover:dataType="java.lang.String">$0.MailingState</MailingState>
+    <OtherPhone clover:dataType="java.lang.String">$0.OtherPhone</OtherPhone>
+    <MailingCity clover:dataType="java.lang.String">$0.MailingCity</MailingCity>
+    <SystemModstamp clover:dataType="java.util.Calendar">$0.SystemModstamp</SystemModstamp>
+    <MailingCountry clover:dataType="java.lang.String">$0.MailingCountry</MailingCountry>
+    <MailingPostalCode clover:dataType="java.lang.String">$0.MailingPostalCode</MailingPostalCode>
+    <FirstName clover:dataType="java.lang.String">$0.FirstName</FirstName>
+    <Birthdate clover:dataType="java.util.Calendar">$0.Birthdate</Birthdate>
+    <PhotoUrl clover:dataType="java.lang.String">$0.PhotoUrl</PhotoUrl>
+    <OtherStreet clover:dataType="java.lang.String">$0.OtherStreet</OtherStreet>
+    <Department clover:dataType="java.lang.String">$0.Department</Department>
+    <IsEmailBounced clover:dataType="java.lang.Boolean">$0.IsEmailBounced</IsEmailBounced>
+    <OtherLatitude clover:dataType="java.lang.Double">$0.OtherLatitude</OtherLatitude>
+    <Description clover:dataType="java.lang.String">$0.Description</Description>
+    <LastReferencedDate clover:dataType="java.util.Calendar">$0.LastReferencedDate</LastReferencedDate>
+    <ReportsToId clover:dataType="java.lang.String">$0.ReportsToId</ReportsToId>
+    <LastModifiedById clover:dataType="java.lang.String">$0.LastModifiedById</LastModifiedById>
+    <Fax clover:dataType="java.lang.String">$0.Fax</Fax>
+    <AssistantPhone clover:dataType="java.lang.String">$0.AssistantPhone</AssistantPhone>
+    <Title clover:dataType="java.lang.String">$0.Title</Title>
+    <MasterRecordId clover:dataType="java.lang.String">$0.MasterRecordId</MasterRecordId>
+    <Name clover:dataType="java.lang.String">$0.Name</Name>
+    <JigsawContactId clover:dataType="java.lang.String">$0.JigsawContactId</JigsawContactId>
+    <OtherCountry clover:dataType="java.lang.String">$0.OtherCountry</OtherCountry>
+    <CreatedDate clover:dataType="java.util.Calendar">$0.CreatedDate</CreatedDate>
+  </item>
+</clover:collection>]]></attr>
+<attr name="__typeName"><![CDATA[Contact]]></attr>
+<attr name="_data_format"><![CDATA[MAP]]></attr>
+<attr name="__connectorName"><![CDATA[Salesforce]]></attr>
+</Node>
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="XML READER" guiX="20" guiY="20" id="XML_READER0" type="XML_READER">
+<attr name="xmlSchemaURL"><![CDATA[./src/main/resources/DEBMAS01.xsd]]></attr>
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath="/DEBMAS01/IDOC/E1KNA1M/E1KNVKM">
+  <Mapping cloverField="MSGFN" trim="true" xpath="MSGFN"/>
+  <Mapping cloverField="PARNR" trim="true" xpath="PARNR"/>
+  <Mapping cloverField="NAMEV" trim="true" xpath="NAMEV"/>
+  <Mapping cloverField="NAME1" trim="true" xpath="NAME1"/>
+  <Mapping cloverField="ABTPA" trim="true" xpath="ABTPA"/>
+  <Mapping cloverField="ABTNR" trim="true" xpath="ABTNR"/>
+  <Mapping cloverField="UEPAR" trim="true" xpath="UEPAR"/>
+  <Mapping cloverField="TELF1" trim="true" xpath="TELF1"/>
+  <Mapping cloverField="ANRED" trim="true" xpath="ANRED"/>
+  <Mapping cloverField="PAFKT" trim="true" xpath="PAFKT"/>
+  <Mapping cloverField="PARVO" trim="true" xpath="PARVO"/>
+  <Mapping cloverField="PAVIP" trim="true" xpath="PAVIP"/>
+  <Mapping cloverField="PARGE" trim="true" xpath="PARGE"/>
+  <Mapping cloverField="PARLA" trim="true" xpath="PARLA"/>
+  <Mapping cloverField="GBDAT" trim="true" xpath="GBDAT"/>
+  <Mapping cloverField="VRTNR" trim="true" xpath="VRTNR"/>
+  <Mapping cloverField="BRYTH" trim="true" xpath="BRYTH"/>
+  <Mapping cloverField="AKVER" trim="true" xpath="AKVER"/>
+  <Mapping cloverField="NMAIL" trim="true" xpath="NMAIL"/>
+  <Mapping cloverField="PARAU" trim="true" xpath="PARAU"/>
+  <Mapping cloverField="PARH1" trim="true" xpath="PARH1"/>
+  <Mapping cloverField="PARH2" trim="true" xpath="PARH2"/>
+  <Mapping cloverField="PARH3" trim="true" xpath="PARH3"/>
+  <Mapping cloverField="PARH4" trim="true" xpath="PARH4"/>
+  <Mapping cloverField="PARH5" trim="true" xpath="PARH5"/>
+  <Mapping cloverField="MOAB1" trim="true" xpath="MOAB1"/>
+  <Mapping cloverField="MOBI1" trim="true" xpath="MOBI1"/>
+  <Mapping cloverField="MOAB2" trim="true" xpath="MOAB2"/>
+  <Mapping cloverField="MOBI2" trim="true" xpath="MOBI2"/>
+  <Mapping cloverField="DIAB1" trim="true" xpath="DIAB1"/>
+  <Mapping cloverField="DIBI1" trim="true" xpath="DIBI1"/>
+  <Mapping cloverField="DIAB2" trim="true" xpath="DIAB2"/>
+  <Mapping cloverField="DIBI2" trim="true" xpath="DIBI2"/>
+  <Mapping cloverField="MIAB1" trim="true" xpath="MIAB1"/>
+  <Mapping cloverField="MIBI1" trim="true" xpath="MIBI1"/>
+  <Mapping cloverField="MIAB2" trim="true" xpath="MIAB2"/>
+  <Mapping cloverField="MIBI2" trim="true" xpath="MIBI2"/>
+  <Mapping cloverField="DOAB1" trim="true" xpath="DOAB1"/>
+  <Mapping cloverField="DOBI1" trim="true" xpath="DOBI1"/>
+  <Mapping cloverField="DOAB2" trim="true" xpath="DOAB2"/>
+  <Mapping cloverField="DOBI2" trim="true" xpath="DOBI2"/>
+  <Mapping cloverField="FRAB1" trim="true" xpath="FRAB1"/>
+  <Mapping cloverField="FRBI1" trim="true" xpath="FRBI1"/>
+  <Mapping cloverField="FRAB2" trim="true" xpath="FRAB2"/>
+  <Mapping cloverField="FRBI2" trim="true" xpath="FRBI2"/>
+  <Mapping cloverField="SAAB1" trim="true" xpath="SAAB1"/>
+  <Mapping cloverField="SABI1" trim="true" xpath="SABI1"/>
+  <Mapping cloverField="SAAB2" trim="true" xpath="SAAB2"/>
+  <Mapping cloverField="SABI2" trim="true" xpath="SABI2"/>
+  <Mapping cloverField="SOAB1" trim="true" xpath="SOAB1"/>
+  <Mapping cloverField="SOBI1" trim="true" xpath="SOBI1"/>
+  <Mapping cloverField="SOAB2" trim="true" xpath="SOAB2"/>
+  <Mapping cloverField="SOBI2" trim="true" xpath="SOBI2"/>
+  <Mapping cloverField="PAKN1" trim="true" xpath="PAKN1"/>
+  <Mapping cloverField="PAKN2" trim="true" xpath="PAKN2"/>
+  <Mapping cloverField="PAKN3" trim="true" xpath="PAKN3"/>
+  <Mapping cloverField="PAKN4" trim="true" xpath="PAKN4"/>
+  <Mapping cloverField="PAKN5" trim="true" xpath="PAKN5"/>
+  <Mapping cloverField="SORTL" trim="true" xpath="SORTL"/>
+  <Mapping cloverField="FAMST" trim="true" xpath="FAMST"/>
+  <Mapping cloverField="SPNAM" trim="true" xpath="SPNAM"/>
+  <Mapping cloverField="TITEL_AP" trim="true" xpath="TITEL_AP"/>
+  <Mapping cloverField="PARLA_ISO" trim="true" xpath="PARLA_ISO"/>
+  <Mapping cloverField="SEGMENT" trim="true" xpath="@SEGMENT"/>
+  <Mapping cloverField="AccountIdRule" trim="true" xpath="../KUNNR"/>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__rootGlobalElementName"><![CDATA[DEBMAS01]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="FOREACH_E1KNVKM_CONTACT:0" guiBendpoints="" id="Edge3" inPort="Port 0 (in)" metadata="b3b4bc55-10ce-4252-b83b-471c454f76ba" outPort="Port 0 (out)" toNode="MAP_WRITER0:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:0" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="510bf5f8-eb55-4844-b86a-e63558a290ec" outPort="Port 0 (out)" toNode="FOREACH_E1KNVKM_CONTACT:0"/>
+</Phase>
+</Graph>
