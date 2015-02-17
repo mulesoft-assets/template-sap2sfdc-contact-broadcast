@@ -46,6 +46,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 ]]></sap:definition>
 
 
+
                                 </sap:outbound-endpoint>
                                 <data-mapper:transform config-ref="XML_To_Account" doc:name="XML To Account"/>
                             </processor-chain>
@@ -84,9 +85,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 	                </choice>            
             
             </batch:step>
-            <batch:step name="setDummyAccountIdStep" accept-expression="'assignDummyAccount' == '${account.sync.policy}'">
-                <expression-component doc:name="set dummy AccountId"><![CDATA[payload['AccountId']= '${account.id.in.b}';]]></expression-component>
-            </batch:step>            
+            
             <batch:step name="doNotCreateAccountStep" accept-expression="'doNotCreateAccount' == '${account.sync.policy}'">
                 <expression-component doc:name="remove AccountId"><![CDATA[payload.remove('AccountId');]]></expression-component>
             </batch:step>            

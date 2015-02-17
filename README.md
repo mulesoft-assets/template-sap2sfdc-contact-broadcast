@@ -185,7 +185,7 @@ In order to use this Mule Anypoint Template you need to configure properties (Cr
 + mail.to=your.email@gmail.com
 + mail.subject=Mail subject
 
-**Policy for creating accounts in SF syncAccount, assignDummyAccount, doNotCreateAccount**
+**Policy for creating accounts in SF syncAccount, doNotCreateAccount**
 + account.sync.policy=syncAccount
 
 # API Calls <a name="apicalls"/>

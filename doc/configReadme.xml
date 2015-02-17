@@ -87,7 +87,7 @@ Please check this Documentation Page:
 + mail.to=your.email@gmail.com
 + mail.subject=Mail subject
 
-**Policy for creating accounts in SF syncAccount, assignDummyAccount, doNotCreateAccount**
+**Policy for creating accounts in SF syncAccount, doNotCreateAccount**
 + account.sync.policy=syncAccount
 ]]>
 		</section>
