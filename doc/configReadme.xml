@@ -39,10 +39,6 @@ These dependencies are private for Mulesoft and will cause you application not t
 The Partner profile needs to have a customized type of logical system set as partner type. An outbound parameter of message type MATMAS should be defined in the partner profile. A RFC destination created earlier should be defined as Receiver Port. Idoc Type base type should be set as MATMAS01.
 ]]>
 		</section>
-		<section id="sfdc_dst">
-		<![CDATA[
-
-		</section>
 		<section id="running_on_studio">
 		<![CDATA[
 In order to make this Anypoint Template run on Mule Studio there are a few extra steps that needs to be made.
@@ -76,18 +72,21 @@ Please check this Documentation Page:
 + sfdc.securityToken=avsfwCUl7apQs56Xq2AKi3X
 + sfdc.url=https://test.salesforce.com/services/Soap/u/28.0
 
-# SMPT Services configuration
+**SMPT Services configuration**
+
 + smtp.host=smtp.gmail.com
 + smtp.port=587
 + smtp.user=gmailuser
 + smtp.password=gmailpassword
 
-# Mail details
+**Mail details**
+
 + mail.from=your.email@gmail.com
 + mail.to=your.email@gmail.com
 + mail.subject=Mail subject
 
 **Policy for creating accounts in SF syncAccount, doNotCreateAccount**
+
 + account.sync.policy=syncAccount
 ]]>
 		</section>
