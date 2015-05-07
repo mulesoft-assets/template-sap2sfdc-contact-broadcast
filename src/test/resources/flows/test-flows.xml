@@ -34,7 +34,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
 				outputXml="true" evaluateFunctionResponse="true" responseTimeout="10000"
 				doc:name="Create Customer in SAP" />
 		</processor-chain>
-        <logger message="999999999999 #[payload]" level="INFO" doc:name="Logger"/>        
+        <logger message="SAP Customer created: #[payload]" level="INFO" doc:name="Logger"/>
         
     </sub-flow>
     <sub-flow name="deleteFromSapFlow" doc:name="deleteFromSapFlow">
@@ -43,14 +43,14 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <sub-flow name="retrieveContactFromSalesforceFlow" doc:name="retrieveContactFromSalesforceFlow">
 
         <sfdc:query-single config-ref="Salesforce" query="SELECT Id, AccountID, Account.Name, FirstName, LastName FROM Contact WHERE FirstName = '#[payload[&quot;FirstName&quot;]]' and LastName = '#[payload[&quot;LastName&quot;]]'" doc:name="Salesforce" />
-        <logger level="INFO" doc:name="Logger"/>
+        <logger level="INFO" doc:name="Logger" message="Salesforce Contact retrieved: #[payload]"/>
     </sub-flow>
     <sub-flow name="deleteFromSalesforceFlow" doc:name="deleteFromSalesforceFlow">
 
         <sfdc:delete config-ref="Salesforce" doc:name="Salesforce">
             <sfdc:ids ref="#[payload]"/>
         </sfdc:delete>
-        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+        <logger message="Deleted Salesforce records: #[payload]" level="INFO" doc:name="Logger"/>
     </sub-flow>
 
 </mule>

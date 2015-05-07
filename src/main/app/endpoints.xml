@@ -28,7 +28,7 @@ Here you should not:
 		</sap:inbound-endpoint>
 
 
-        <logger message="111111 #[payload]" level="INFO" doc:name="Logger"/>
+        <logger message="Contact from SAP: #[payload]" level="INFO" doc:name="Logger"/>
         <flow-ref name="mainFlow" doc:name="trigger 'mainFlow'" doc:description="mainFlow"/>
 
     
