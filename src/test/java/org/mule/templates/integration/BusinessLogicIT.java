@@ -33,8 +33,6 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 	protected static final int TIMEOUT_SEC = 120;
 	private BatchTestHelper helper;
 	
-	protected SubflowInterceptingChainLifecycleWrapper createContactSapFlow;
-	protected SubflowInterceptingChainLifecycleWrapper deleteFromSapFlow;
 	protected SubflowInterceptingChainLifecycleWrapper retrieveContactFromSalesforceFlow;
 	protected SubflowInterceptingChainLifecycleWrapper deleteFromSalesforceFlow;
 	
@@ -47,12 +45,6 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 		
 		helper = new BatchTestHelper(muleContext);
 		
-		createContactSapFlow = getSubFlow("createContactSapFlow");
-		createContactSapFlow.initialise();
-		
-		deleteFromSapFlow = getSubFlow("deleteFromSapFlow");
-		deleteFromSapFlow.initialise();
-		
 		retrieveContactFromSalesforceFlow = getSubFlow("retrieveContactFromSalesforceFlow");
 		retrieveContactFromSalesforceFlow.initialise();
 		
@@ -62,7 +54,6 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 
 	@After
 	public void tearDown() throws MuleException, Exception {
-//		deleteSapTestData();
 		deleteSalesforceTestData();
 	}
 
