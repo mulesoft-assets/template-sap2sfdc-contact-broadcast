@@ -4,7 +4,7 @@
       xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
       xmlns:spring="http://www.springframework.org/schema/beans"
-      version="EE-3.6.2"
+      version="EE-3.5.2"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/sap http://www.mulesoft.org/schema/mule/sap/current/mule-sap.xsd
@@ -28,7 +28,7 @@ Here you should not:
 		</sap:inbound-endpoint>
 
 
-        <logger message="Contact from SAP: #[payload]" level="INFO" doc:name="Logger"/>
+        <logger message="111111 #[payload]" level="INFO" doc:name="Logger"/>
         <flow-ref name="mainFlow" doc:name="trigger 'mainFlow'" doc:description="mainFlow"/>
 
     
