@@ -32,17 +32,17 @@ import com.mulesoft.module.batch.BatchTestHelper;
 @SuppressWarnings("unchecked")
 public class BusinessLogicIT extends AbstractTemplateTestCase {
 	
-	private static final Logger log = LogManager.getLogger(BusinessLogicIT.class);
+	private static final Logger LOG = LogManager.getLogger(BusinessLogicIT.class);
 	
-	protected static final String TEMPLATE_NAME = "contact-broadcast";
-	protected static final int TIMEOUT_SEC = 120;
+	private static final String TEMPLATE_NAME = "contact-broadcast";
+	private static final int TIMEOUT_SEC = 120;
 	private BatchTestHelper helper;
 	
-	protected SubflowInterceptingChainLifecycleWrapper retrieveContactFromSalesforceFlow;
-	protected SubflowInterceptingChainLifecycleWrapper deleteFromSalesforceFlow;
+	private SubflowInterceptingChainLifecycleWrapper retrieveContactFromSalesforceFlow;
+	private SubflowInterceptingChainLifecycleWrapper deleteFromSalesforceFlow;
 	
-	Map<String, Object> sfContact;
-	List<String> idsToDelete = new ArrayList<String>();
+	private Map<String, Object> sfContact;
+	private List<String> idsToDelete = new ArrayList<String>();
 	
 	@Before
 	public void setUp() throws Exception {
@@ -75,7 +75,7 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 		payload.put("LastName", "Pucik 41");
 		MuleEvent event = retrieveContactFromSalesforceFlow.process(getTestEvent(payload, MessageExchangePattern.REQUEST_RESPONSE));
 		sfContact = (Map<String, Object>) event.getMessage().getPayload();
-		log.info("Retrieved Salesforce contact: " + sfContact);
+		LOG.info("Retrieved Salesforce contact: " + sfContact);
 		
 		Assert.assertNotNull(sfContact);
 		Assert.assertNotNull(sfContact.get("Account"));
@@ -85,7 +85,7 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 	
 	private void deleteSalesforceTestData() throws MuleException, Exception{
 		MuleEvent event = deleteFromSalesforceFlow.process(getTestEvent(idsToDelete, MessageExchangePattern.REQUEST_RESPONSE));
-		log.info("Deleted Salesforce data: " + event.getMessage().getPayload());
+		LOG.info("Deleted Salesforce data: " + event.getMessage().getPayload());
 	}
 	
 	private String buildIDocRequest(){

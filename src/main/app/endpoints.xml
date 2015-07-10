@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking"
-	xmlns:sap="http://www.mulesoft.org/schema/mule/sap" xmlns="http://www.mulesoft.org/schema/mule/core"
+<mule version="EE-3.7.0"
+	xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking"
+	xmlns:sap="http://www.mulesoft.org/schema/mule/sap" 
+	xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.6.2"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/sap http://www.mulesoft.org/schema/mule/sap/current/mule-sap.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
@@ -12,7 +14,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 
 	<!-- 	In this file you should declare all your inbound endpoints and from here control the access to your application -->
 
-	<flow name="triggerFlow" processingStrategy="synchronous" doc:name="triggerFlow" doc:description="This is the simpliest entry point to start the excecution of your Template
+	<flow name="triggerFlow" processingStrategy="synchronous"  doc:description="This is the simpliest entry point to start the excecution of your Template
 Here you should:
 	* Define any inbound endpoint
 	* Handle any input parameter and transform it into the expected format by the mainFlow
@@ -25,7 +27,7 @@ Here you should not:
 		</sap:inbound-endpoint>
 
 
-        <logger message="Contact from SAP: #[payload]" level="INFO" doc:name="Logger"/>
+        <logger message="Contact from SAP: #[payload]" level="INFO" doc:name="Log Input IDoc"/>
         <flow-ref name="mainFlow" doc:name="trigger 'mainFlow'" doc:description="mainFlow"/>
 
     

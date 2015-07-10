@@ -26,7 +26,7 @@ Note that using this template is subject to the conditions of this [License Agre
 Please review the terms of the license before downloading and using this template. In short, you are allowed to use the template for free with Mule ESB Enterprise Edition, CloudHub, or as a trial in Anypoint Studio.
 
 # Use Case <a name="usecase"/>
-This Anypoint Template should serve as a foundation for setting an online sync of Customer's Contacts from SAP to Salesforce Contacts in manner of push notification. Every time there is a new Contact or a change in an already existing one, SAP will send the IDoc with it to the running template which will update/create a Contact in the Salesforce target instance. 
+This Anypoint Template should serve as a foundation for setting an online sync of Contacts from SAP to Salesforce in manner of push notification. Every time there is a new Contact or a change in an already existing one, SAP will send the IDoc with it to the running template which will update/create a Contact in the Salesforce target instance. 
 
 Requirements have been set not only to be used as examples, but also to establish a starting point to adapt your integration to your requirements.
 
@@ -34,7 +34,7 @@ As implemented, this Anypoint Template leverages the [Batch Module](http://www.m
 
 The integration is triggered by an inbound SAP endpoint listening for incoming IDOC **DEBMAS01** messages including information about Customer's Contacts. This XML is passed to the batch process and transformed to a Salesforce Contact.
 
-In this template you may to choose whether Account for Contact should be created as well during the process. 
+In this template you may choose whether Account for Contact should be created as well during the process. 
 This functionality relies on a standard BAPI for retrieving details about customers: **BAPI_CUSTOMER_GETDETAIL2**
 
 # Considerations <a name="considerations"/>
@@ -43,7 +43,7 @@ To make this Anypoint Template run, there are certain preconditions that must be
 All of them deal with the preparations in both source (SAP) and destination (SFDC) systems, that must be made in order for all to run smoothly.
 **Failling to do so could lead to unexpected behavior of the template.**
 
-Before continue with the use of this Anypoint Template, you may want to check out this [Documentation Page](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP), that will teach you how to work 
+Before using this Anypoint Template, you may want to check out this [Documentation Page](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP), that will teach you how to work 
 with SAP and Anypoint Studio-
 
 ## Disclaimer
@@ -64,7 +64,7 @@ There may be a few things that you need to know regarding SAP, in order for this
 SAP backend system is used as source of data. SAP Connector is used to send and receive the data from the SAP backend. 
 The connector can either use RFC calls of BAPI functions and/or IDoc messages for data exchange and needs to be properly customized as per chapter: [Properties to be configured](#propertiestobeconfigured)
 
-The Partner profile needs to have a customized type of logical system set as partner type. An outbound parameter of message type MATMAS should be defined in the partner profile. A RFC destination created earlier should be defined as Receiver Port. Idoc Type base type should be set as MATMAS01.
+The Partner profile needs to have a customized type of logical system set as partner type. An outbound parameter of message type DEBMAS should be defined in the partner profile. A RFC destination created earlier should be defined as Receiver Port. IDoc Type base type should be set as DEBMAS01.
 
 ## Salesforce Considerations <a name="salesforceconsiderations"/>
 
@@ -173,20 +173,7 @@ In order to use this Mule Anypoint Template you need to configure properties (Cr
 + sfdc.username=bob.dylan@sfdc
 + sfdc.password=DylanPassword123
 + sfdc.securityToken=avsfwCUl7apQs56Xq2AKi3X
-+ sfdc.url=https://test.salesforce.com/services/Soap/u/28.0
-
-**SMPT Services configuration**
-
-+ smtp.host=smtp.gmail.com
-+ smtp.port=587
-+ smtp.user=gmailuser
-+ smtp.password=gmailpassword
-
-**Mail details**
-
-+ mail.from=your.email@gmail.com
-+ mail.to=your.email@gmail.com
-+ mail.subject=Mail subject
++ sfdc.url=https://test.salesforce.com/services/Soap/u/32.0
 
 **Policy for creating accounts in SF syncAccount, doNotCreateAccount**
 
@@ -208,8 +195,9 @@ if an account with matching name exists in Salesforce and if not it will be crea
 The division by 200 is because, by default, contacts are gathered in groups
 of 200 for each Upsert API Call in the commit step. 
 
-For instance if 10 records are fetched from origin instance, then 1 api
-calls to SFDC will be made ( 1).
+For instance if 10 records are fetched from origin instance, then 31 api
+calls to SFDC will be made (worst case scenario). If the account in Salesforce alerady exists or account synchronization
+is disabled, there will be fewer API calls made.
 
 
 # Customize It!<a name="customizeit"/>
