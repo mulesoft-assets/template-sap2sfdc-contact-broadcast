@@ -25,7 +25,6 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
         <batch:input>
             <dw:transform-message doc:name="SAP Contacts to SFDC Contacts">
                 <dw:set-payload><![CDATA[%dw 1.0
-%input payload application/xml
 %output application/java
 ---
 
@@ -58,7 +57,6 @@ payload.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
                         </sap:outbound-endpoint>
                         <dw:transform-message doc:name="SAP Customer to Salesforce Account">
                             <dw:set-payload><![CDATA[%dw 1.0
-%input payload application/xml
 %output application/java
 
 %var export = payload.BAPI_CUSTOMER_GETDETAIL2.export
