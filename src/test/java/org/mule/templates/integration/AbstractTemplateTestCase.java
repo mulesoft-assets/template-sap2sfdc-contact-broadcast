@@ -45,6 +45,8 @@ public class AbstractTemplateTestCase extends FunctionalTestCase {
 
 		return resources + getTestFlows();
 	}
+	
+	
 
 	protected String getTestFlows() {
 		StringBuilder resources = new StringBuilder();

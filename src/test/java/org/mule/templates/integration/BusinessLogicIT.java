@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.io.InputStream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +21,9 @@ import org.junit.Test;
 import org.mule.MessageExchangePattern;
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleException;
+import org.mule.construct.Flow;
 import org.mule.processor.chain.SubflowInterceptingChainLifecycleWrapper;
+import org.mule.transformer.types.DataTypeFactory;
 
 import com.mulesoft.module.batch.BatchTestHelper;
 
@@ -41,6 +44,8 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 	private SubflowInterceptingChainLifecycleWrapper retrieveContactFromSalesforceFlow;
 	private SubflowInterceptingChainLifecycleWrapper deleteFromSalesforceFlow;
 	
+	private Flow mainFlow;
+	
 	private Map<String, Object> sfContact;
 	private List<String> idsToDelete = new ArrayList<String>();
 	
@@ -55,6 +60,8 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 		
 		deleteFromSalesforceFlow = getSubFlow("deleteFromSalesforceFlow");
 		deleteFromSalesforceFlow.initialise();
+		
+		mainFlow =  (Flow) muleContext.getRegistry().lookupObject("mainFlow");
 	}
 
 	@After
@@ -64,7 +71,9 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 
 	@Test
 	public void testMainFlow() throws Exception {
-		runFlow("mainFlow", buildIDocRequest());
+		final MuleEvent testEvent = getTestEvent(null, mainFlow);
+		testEvent.getMessage().setPayload(buildIDocRequest(), DataTypeFactory.create(InputStream.class, "application/xml"));
+		mainFlow.process(testEvent);
 		
 		// Wait for the batch job executed by the poll flow to finish
 		helper.awaitJobTermination(TIMEOUT_SEC * 1000, 500);
