@@ -35,7 +35,7 @@ As implemented, this Anypoint Template leverages the [Batch Module](http://www.m
 The integration is triggered by an inbound SAP endpoint listening for incoming IDOC **DEBMAS01** messages including information about Customer's Contacts. This XML is passed to the batch process and transformed to a Salesforce Contact.
 
 In this template you may choose whether Account for Contact should be created as well during the process. 
-This functionality relies on a standard BAPI for retrieving details about customers: **BAPI_CUSTOMER_GETDETAIL2**
+This functionality relies on a standard BAPI for retrieving details about customers: **BAPI\_CUSTOMER\_GETDETAIL2**
 
 # Considerations <a name="considerations"/>
 
@@ -44,7 +44,7 @@ All of them deal with the preparations in both source (SAP) and destination (SFD
 **Failling to do so could lead to unexpected behavior of the template.**
 
 Before using this Anypoint Template, you may want to check out this [Documentation Page](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP), that will teach you how to work 
-with SAP and Anypoint Studio-
+with SAP and Anypoint Studio.
 
 ## Disclaimer
 
@@ -178,6 +178,11 @@ In order to use this Mule Anypoint Template you need to configure properties (Cr
 **Policy for creating accounts in SF syncAccount, doNotCreateAccount**
 
 + account.sync.policy=syncAccount
+
+**Note:** the property **account.sync.policy** can take any of the two following values: 
+
++ **doNotCreateAccount**: application will do nothing in what respect to the account and it'll just move the contact over.
++ **syncAccount**: it will try to create the contact's account if this is not pressent in the Salesforce instance.
 
 # API Calls <a name="apicalls"/>
 SalesForce imposes limits on the number of API Calls that can be made.
