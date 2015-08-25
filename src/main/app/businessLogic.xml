@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule version="EE-3.7.0"
+<mule version="EE-3.7.1"
 	xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" 
 	xmlns:json="http://www.mulesoft.org/schema/mule/json" 
 	xmlns:sap="http://www.mulesoft.org/schema/mule/sap"
@@ -68,11 +68,11 @@ payload.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
                         </dw:transform-message>
                     </processor-chain>
                 </enricher>
-                <enricher source="#[payload]" target="#[recordVars.sfAccount]" doc:name="store result in 'sfAccount'">
-                    <sfdc:query-single config-ref="Salesforce" query="SELECT Id, Name FROM Account WHERE Name = '#[recordVars.sapCustomer.Name]'" doc:name="Query Account in  Salesforce Instance "/>
+                <enricher source="#[payload == null ? null : payload.Id]" target="#[recordVars.sfAccountId]" doc:name="store result in 'sfAccountId'">
+                    <sfdc:query-single config-ref="Salesforce" query="SELECT Id FROM Account WHERE Name = '#[recordVars.sapCustomer.Name]'" doc:name="Query Account in  Salesforce Instance "/>
                 </enricher>
                 <choice doc:name="Does the corresponding account need to be created in Salesforce?">
-                    <when expression="#[recordVars.sfAccount == null]">
+                    <when expression="#[recordVars.sfAccountId == null]">
                         <enricher source="#[payload[0].getId()]" target="#[payload.AccountId]" doc:name="store new accountId to payload">
                             <sfdc:create-single config-ref="Salesforce" type="Account" doc:name="Create Account in Salesforce">
                                 <sfdc:object ref="#[recordVars.sapCustomer]"/>
@@ -82,7 +82,7 @@ payload.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
                     </when>
                     <otherwise>
                         <enricher  target="#[payload.AccountId]" doc:name="store existing accountId to payload">
-                            <set-payload value="#[recordVars.sfAccount.Id]" doc:name="Load existing Account Id"/>
+                            <set-payload value="#[recordVars.sfAccountId]" doc:name="Load existing Account Id"/>
                         </enricher>
                     </otherwise>
                 </choice>
