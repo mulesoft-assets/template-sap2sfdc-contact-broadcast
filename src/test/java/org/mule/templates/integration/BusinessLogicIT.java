@@ -124,7 +124,7 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 		request.append("		</EDI_DC40>");
 		request.append("		<E1KNA1M SEGMENT=\"1\">");
 		request.append("			<MSGFN>005</MSGFN>");
-		request.append("			<KUNNR>0000099009</KUNNR>");
+		request.append("			<KUNNR>0000010990</KUNNR>");
 		request.append("			<ANRED>Mr.</ANRED>");
 		request.append("			<BBBNR>0000000</BBBNR>");
 		request.append("			<BBSNR>00000</BBSNR>");
