@@ -88,7 +88,7 @@ public class BusinessLogicIT extends AbstractTemplateTestCase {
 		
 		Assert.assertNotNull(sfContact);
 		Assert.assertNotNull(sfContact.get("Account"));
-		Assert.assertTrue("Janko Hrasko".equals(((HashMap<String, Object>)sfContact.get("Account")).get("Name")));
+		Assert.assertTrue("Test Customer 2".equals(((HashMap<String, Object>)sfContact.get("Account")).get("Name")));
 		idsToDelete.add((String)sfContact.get("Id"));
 	}
 	
