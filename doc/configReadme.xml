@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<configuration>
+	<placeholders>
+		<placeholder id="template_name">SAP to Salesforce Contact Broadcast</placeholder>
+	</placeholders>
+	<sections>
+		<section id="use_case">
+This Anypoint Template should serve as a foundation for setting an online sync of Contacts from SAP to Salesforce in manner of push notification. Every time there is a new Contact or a change in an already existing one, SAP will send the IDoc with it to the running template which will update/create a Contact in the Salesforce target instance.
+
+Requirements have been set not only to be used as examples, but also to establish a starting point to adapt your integration to your requirements.
+
+As implemented, this Anypoint Template leverages the [Batch Module](http://www.mulesoft.org/documentation/display/current/Batch+Processing). The batch job is divided in *Process* and *On Complete* stages.
+
+The integration is triggered by an inbound SAP endpoint listening for incoming IDOC **DEBMAS01** messages including information about Customer's Contacts. This XML is passed to the batch process and transformed to a Salesforce Contact.
+
+In this template you may choose whether Account for Contact should be created as well during the process.
+This functionality relies on a standard BAPI for retrieving details about customers: **BAPI\_CUSTOMER\_GETDETAIL2**
+		</section>
+		<section id="considerations">
+		<![CDATA[
+To make this Anypoint Template run, there are certain preconditions that must be considered.
+All of them deal with the preparations in both source (SAP) and destination (SFDC) systems, that must be made in order for all to run smoothly.
+**Failing to do so could lead to unexpected behavior of the template.**
+
+Before using this Anypoint Template, you may want to check out this [Documentation Page](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP), that will teach you how to work
+with SAP and Anypoint Studio.
+
+## Disclaimer
+
+This Anypoint template uses a few private Maven dependencies from Mulesoft in order to work. If you intend to run this template with Maven support, you need to add three extra dependencies for SAP to the pom.xml file.
+]]>
+		</section>
+		<section id="sap_src">
+<![CDATA[
+The Partner profile needs to have a customized type of logical system set as partner type. An outbound parameter of message type DEBMAS should be defined in the partner profile. A RFC destination created earlier should be defined as Receiver Port. IDoc Type base type should be set as DEBMAS01.
+]]>
+		</section>
+		<section id="running_on_studio">
+		<![CDATA[
+In order to make this Anypoint Template run on Mule Studio there are a few extra steps that needs to be made.
+Please check this Documentation Page:
+
++ [Enabling Your Studio Project for SAP](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP)
+		]]>
+		</section>
+		<section id="application_configuration">
+		<![CDATA[
+
+**Application Configuration**
++ page.size `200`
+
+**SAP Connector configuration**
+
++ sap.jco.ashost `your.sap.address.com`
++ sap.jco.user `SAP_USER`
++ sap.jco.passwd `SAP_PASS`
++ sap.jco.sysnr `14`
++ sap.jco.client `800`
++ sap.jco.lang `EN`
+
+**SAP Endpoint configuration**
+
++ sap.jco.operationtimeout `10000`
++ sap.jco.connectioncount `2`
++ sap.jco.gwhost `your.sap.addres.com`
++ sap.jco.gwservice `sapgw14`
++ sap.jco.idoc.programid `PROGRAM_ID`
+
+**SalesForce Connector configuration**
+
++ sfdc.username `bob.dylan@sfdc`
++ sfdc.password `DylanPassword123`
++ sfdc.securityToken `avsfwCUl7apQs56Xq2AKi3X`
+
+**Policy for creating accounts in SF syncAccount, doNotCreateAccount**
+
++ account.sync.policy `syncAccount`
+
+**Note:** the property **account.sync.policy** can take any of the two following values:
+
++ **doNotCreateAccount**: application will do nothing in what respect to the account and it'll just move the contact over.
++ **syncAccount**: it will try to create the contact's account if this is not pressent in the Salesforce instance.
+]]>
+		</section>
+		<section id="api_calls">
+		<![CDATA[
+SalesForce imposes limits on the number of API Calls that can be made.
+Therefore calculating this amount may be an important factor to
+consider. Product Broadcast Template calls to the API can be
+calculated using the formula:
+
+**X * 3 + X / ${page.size}**
+
+Being X the number of Contacts to be synchronized on each run.
+
+Multiplication by 3 is because for every user if account.sync.policy is set to value **syncAccounts** for every contact will be checked
+if an account with matching name exists in Salesforce and if not it will be created.
+
+The division by ${page.size} is because contacts are gathered in groups
+of ${page.size} for each Upsert API Call in the commit step.
+
+For instance if 10 records are fetched from origin instance, then 31 api
+calls to SFDC will be made (worst case scenario). If the account in Salesforce alerady exists or account synchronization
+is disabled, there will be fewer API calls made.
+]]>
+		</section>
+
+	</sections>
+</configuration>
