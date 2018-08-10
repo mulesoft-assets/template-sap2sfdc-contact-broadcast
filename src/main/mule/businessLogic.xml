@@ -67,8 +67,7 @@ output application/xml
   "BAPI_CUSTOMER_GETDETAIL2": {
     "import": {
       "CUSTOMERNO": payload
-    },
-    "tables": null
+    }
   }
 }]]></ee:set-payload>
                         </ee:message>
