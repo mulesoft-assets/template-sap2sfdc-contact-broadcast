@@ -99,7 +99,7 @@ var export = payload.BAPI_CUSTOMER_GETDETAIL2.export
 }]]]></salesforce:parameters>
                     </salesforce:query-single>
                     <choice doc:name="Does the corresponding account need to be created in Salesforce?" doc:id="153b8209-a577-49ae-ac52-f62e3f68b878">
-                        <when expression="#[vars.sfAccount == null]">
+                        <when expression="#[isEmpty(vars.sfAccount)]">
                             <salesforce:create-single doc:name="Create Account in Salesforce" doc:id="db81cee6-2efd-4ee1-b153-63315d57de1c"
                                 config-ref="Salesforce" type="Account">
                                 <salesforce:record><![CDATA[#[vars.sapCustomer]]]></salesforce:record>
