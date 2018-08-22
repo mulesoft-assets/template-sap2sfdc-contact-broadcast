@@ -14,11 +14,7 @@
     <version>2.1.0-SNAPSHOT</version>
 
     <name>template-sap2sfdc-contact-broadcast</name>
-
-    <properties>
-        <sap.connector.version>4.1.0</sap.connector.version>
-    </properties>
-
+    
     <build>
         <plugins>
             <plugin>
