@@ -1,0 +1,16 @@
+<?xml version="1.1"?>
+<DEBMAS01>
+    <IDOC BEGIN="1">
+        <E1KNA1M SEGMENT="1">
+            <KUNNR>0000000000</KUNNR>
+            <E1KNVKM SEGMENT="1">
+                <NAMEV>John</NAMEV>
+                <NAME1>Doe</NAME1>
+            </E1KNVKM>
+            <E1KNVKM SEGMENT="1">
+                <NAMEV>Peter</NAMEV>
+                <NAME1>Pan</NAME1>
+            </E1KNVKM>
+        </E1KNA1M>
+    </IDOC>
+</DEBMAS01>
