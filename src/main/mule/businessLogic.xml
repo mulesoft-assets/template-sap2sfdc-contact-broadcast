@@ -23,10 +23,10 @@ payload.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
-		<batch:job jobName="syncContactBatch" doc:id="204892ae-0d97-4326-beae-310c8d52b7a6">
+        <batch:job jobName="syncContactBatch" doc:id="204892ae-0d97-4326-beae-310c8d52b7a6">
             <batch:process-records>
                 <batch:step name="getContactInSalesforceStep" doc:id="89713774-362a-4e92-9bdc-41e31802bf38">
-					<salesforce:query-single doc:name="Query Salesforce for Contact" doc:id="81912bc4-8279-483a-97a1-002b26192e57"
+                    <salesforce:query-single doc:name="Query Salesforce for Contact" doc:id="81912bc4-8279-483a-97a1-002b26192e57"
                         config-ref="Salesforce" target="IdInSFDC">
                         <salesforce:salesforce-query>Select Id from Contact where LastName = ':lastName' and FirstName = ':firstName'
                         </salesforce:salesforce-query>
@@ -47,7 +47,7 @@ output application/java
 payload - 'AccountId' ++ {
 	"Id" : if (vars.IdInSFDC != null) vars.IdInSFDC.Id else null
 }]]></ee:set-variable>
-							<ee:set-variable variableName="sapAccountId" ><![CDATA[%dw 2.0
+                            <ee:set-variable variableName="sapAccountId"><![CDATA[%dw 2.0
 output application/java
 ---
 payload.AccountId]]></ee:set-variable>
@@ -73,7 +73,7 @@ output application/xml
                         </ee:message>
                     </ee:transform>
                     <sap:execute-synchronous-remote-function-call doc:name="Get Customer by Number"
-                        doc:id="5fd11f26-46a9-4baf-9777-774ce624f21a" config-ref="SAP_Outbound" key="BAPI_CUSTOMER_GETDETAIL2"/>
+                        doc:id="5fd11f26-46a9-4baf-9777-774ce624f21a" config-ref="SAP_Outbound" key="BAPI_CUSTOMER_GETDETAIL2" />
                     <ee:transform doc:name="SAP Customer to Salesforce Account" doc:id="e3e8f3bf-9abf-474c-ad48-5ae7b0a230b1">
                         <ee:message>
                         </ee:message>
@@ -106,38 +106,38 @@ var export = payload.BAPI_CUSTOMER_GETDETAIL2.export
                             </salesforce:create-single>
                             <ee:transform doc:name="Store new accountId" doc:id="9ad4464d-f459-456d-a190-350dc18d8423">
                                 <ee:message>
-									<ee:set-payload ><![CDATA[%dw 2.0
+                                    <ee:set-payload><![CDATA[%dw 2.0
 output application/java
 ---
 vars.recordPayload ++ {AccountId : payload.id}]]></ee:set-payload>
                                 </ee:message>
-								<ee:variables >
-								</ee:variables>
+                                <ee:variables>
+                                </ee:variables>
                             </ee:transform>
                         </when>
                         <otherwise>
                             <ee:transform doc:name="Store existing accountId" doc:id="058dfe87-6b91-442d-a072-08ce391d7a91">
                                 <ee:message>
-									<ee:set-payload ><![CDATA[%dw 2.0
+                                    <ee:set-payload><![CDATA[%dw 2.0
 output application/java
 ---
 vars.recordPayload ++ {AccountId : vars.sfAccount.Id}]]></ee:set-payload>
                                 </ee:message>
-								<ee:variables >
-								</ee:variables>
+                                <ee:variables>
+                                </ee:variables>
                             </ee:transform>
                         </otherwise>
                     </choice>
                 </batch:step>
                 <batch:step name="upsertContactInSalesforceStep" doc:id="78a74ab4-9b91-416d-985a-acda2ac377eb">
                     <batch:aggregator doc:name="Batch Aggregator" doc:id="1ad86a98-643e-494a-a90a-32daab0b03cc" size="${page.size}">
-                        <salesforce:upsert-bulk type="Contact" doc:name="Upsert Contact in Salesforce" doc:id="ed320bd4-6a73-4041-9707-37bb8bbc471a" config-ref="Salesforce" externalIdFieldName="Id">
-						</salesforce:upsert-bulk>
-						<logger level="INFO" doc:name="Upsert contacts in Salesforce" doc:id="7236a9f6-7aaf-4f40-94e3-e477a132e88d"
+                        <salesforce:upsert-bulk type="Contact" doc:name="Upsert Contact in Salesforce" doc:id="ed320bd4-6a73-4041-9707-37bb8bbc471a"
+                            config-ref="Salesforce" externalIdFieldName="Id">
+                        </salesforce:upsert-bulk>
+                        <logger level="INFO" doc:name="Upsert contacts in Salesforce" doc:id="7236a9f6-7aaf-4f40-94e3-e477a132e88d"
                             message="Upsert result: #[output application/json --- payload] " />
                     </batch:aggregator>
-                    <logger level="INFO" doc:name="Log before upsert" doc:id="fc8cc658-8eaf-4c4b-a909-f9f53c52c903"
-                        message="Before upsert: #[output application/json --- payload]" />
+                    <logger level="INFO" doc:name="Log before upsert" doc:id="fc8cc658-8eaf-4c4b-a909-f9f53c52c903" message="Before upsert: #[output application/json --- payload]" />
                 </batch:step>
             </batch:process-records>
             <batch:on-complete>
@@ -156,8 +156,7 @@ output text/plain
 ++ "\n Processed Records: " 		++ payload.processedRecords!]]></ee:set-payload>
                     </ee:message>
                 </ee:transform>
-                <logger level="INFO" doc:name="Migration process has finished!" doc:id="b7575d38-7dbd-4602-9186-1bbb25234896"
-                    message="Migration process has finished: #[payload]" />
+                <logger level="INFO" doc:name="Migration process has finished!" doc:id="b7575d38-7dbd-4602-9186-1bbb25234896" message="Migration process has finished: #[payload]" />
 
             </batch:on-complete>
 

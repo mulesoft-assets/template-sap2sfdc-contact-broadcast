@@ -5,11 +5,7 @@
             <KUNNR>0000000000</KUNNR>
             <E1KNVKM SEGMENT="1">
                 <NAMEV>John</NAMEV>
-                <NAME1>Doe</NAME1>
-            </E1KNVKM>
-            <E1KNVKM SEGMENT="1">
-                <NAMEV>Peter</NAMEV>
-                <NAME1>Pan</NAME1>
+                <NAME1>Test-Doe</NAME1>
             </E1KNVKM>
         </E1KNA1M>
     </IDOC>

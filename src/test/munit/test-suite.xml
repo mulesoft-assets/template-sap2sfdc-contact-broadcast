@@ -36,49 +36,28 @@ vars.iDoc.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
             <set-payload value="#[vars.iDoc]" doc:name="Set IDoc message to Payload" doc:id="5ceee0c9-3d58-4459-affe-2c69801e180b"
                 mimeType="application/xml" />
             <flow-ref doc:name="Call businessLogicFlow" doc:id="dfbdfc78-2f46-47bc-9606-83e4ab2d41b0" name="businessLogicFlow" />
-            <scripting:execute engine="groovy" doc:name="Sleep for 30s until the processing is completed" doc:id="da37ea08-7af6-413d-b2c2-2c67350d6c23">
+			<scripting:execute engine="groovy" doc:name="Sleep for 30s until the processing is completed" doc:id="da37ea08-7af6-413d-b2c2-2c67350d6c23">
                 <scripting:code>sleep(30000)</scripting:code>
             </scripting:execute>
+			<salesforce:query-single doc:name="Query Contact" doc:id="83afa053-c913-4929-9f1f-cad322cbe9a0" config-ref="Salesforce" target="sfdcContact">
+				<salesforce:salesforce-query>Select Id, LastName from Contact where LastName = ':lastName' and FirstName = ':firstName'</salesforce:salesforce-query>
+				<salesforce:parameters><![CDATA[#[output application/java
+---
+{
+	"lastName" : vars.contacts[0].LastName,
+	"firstName" : vars.contacts[0].FirstName
+}]]]></salesforce:parameters>
+			</salesforce:query-single>
         </munit:execution>
         <munit:validation>
-            <munit-tools:verify-call doc:name="Verify salesforce:upsert-bulk call" doc:id="b46cfb93-3283-40e6-8d5a-a1deb3b004a0"
+			<munit-tools:assert-that doc:name="Assert that Contact was added to Salesforce" doc:id="ceb4fac0-195a-4685-9195-975199b635c2" expression="#[vars.sfdcContact.LastName]" is="#[MunitTools::equalTo(vars.contacts[0].LastName)]" message="Contact wasn't added to Salesforce"/>
+			<munit-tools:verify-call doc:name="Verify salesforce:upsert-bulk call" doc:id="b46cfb93-3283-40e6-8d5a-a1deb3b004a0"
                 processor="salesforce:upsert-bulk" times="1" />
         </munit:validation>
     </munit:test>
     <munit:after-test name="test-suite-After_Test" description="After tests actions" doc:id="96716795-3697-4066-8f38-3bf9adbc8867">
-		<ee:transform doc:name="Create sfdcContactIds array" doc:id="59ff8f3e-13c7-4265-b2f1-070aafff8559">
-			<ee:message>
-			</ee:message>
-			<ee:variables>
-				<ee:set-variable variableName="sfdcContactIds"><![CDATA[%dw 2.0
-output application/java
----
-[]]]></ee:set-variable>
-			</ee:variables>
-		</ee:transform>
-		<foreach doc:name="For Each" doc:id="c4adf541-212c-45d5-ac99-0c01c434c58b" collection="vars.contacts">
-			<salesforce:query-single doc:name="Query Contact" doc:id="83afa053-c913-4929-9f1f-cad322cbe9a0" config-ref="Salesforce">
-				<salesforce:salesforce-query >Select Id from Contact where LastName = ':lastName' and FirstName = ':firstName'</salesforce:salesforce-query>
-				<salesforce:parameters ><![CDATA[#[output application/java
----
-{
-	"lastName" : payload.LastName,
-	"firstName" : payload.FirstName
-}]]]></salesforce:parameters>
-			</salesforce:query-single>
-			<ee:transform doc:name="Store Id to sfdcContactIds" doc:id="217da8f8-76cb-4ed0-9fda-628cc6b01584" >
-				<ee:message >
-				</ee:message>
-				<ee:variables >
-					<ee:set-variable variableName="sfdcContactIds" ><![CDATA[%dw 2.0
-output application/java
----
-vars.sfdcContactIds + payload.Id]]></ee:set-variable>
-				</ee:variables>
-			</ee:transform>
-		</foreach>
  		<salesforce:delete doc:name="Delete test contacts" doc:id="780f44cc-847f-48c1-b783-1014529d3d10" config-ref="Salesforce">
-			<salesforce:delete-ids ><![CDATA[#[vars.sfdcContactIds]]]></salesforce:delete-ids>
+			<salesforce:delete-ids ><![CDATA[#[[vars.sfdcContact.Id]]]]></salesforce:delete-ids>
 		</salesforce:delete>
 	</munit:after-test>
 </mule>
