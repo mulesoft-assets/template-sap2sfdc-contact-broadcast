@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+    xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+    xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+    xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
+    <munit:config name="test-suite.xml" />
+    <configuration-properties doc:name="Configuration properties" doc:id="4d1cfd27-37cf-4e7e-b110-8f153d066ea4" file="mule.test.properties" />
+    <configuration-properties doc:name="Configuration properties" doc:id="3ada2881-d4b2-4e61-af85-f0d435105cb1" file="common.properties" />
+    <munit:before-test name="test-suite-Before_Test" description="Before tests actions" doc:id="83bc59fc-7563-43f4-bb58-99bb38962eac">
+        <set-variable value="#[MunitTools::getResourceAsString('idoc.xml')]" doc:name="Set iDoc message to variable" doc:id="36b8d2e5-561c-4c14-917c-a3b3584689a4"
+            variableName="iDoc" mimeType="application/xml" />
+        <ee:transform doc:name="Set Contacts to variable" doc:id="d6d86688-dd87-48c2-9ef4-4f9a004de169">
+            <ee:message>
+            </ee:message>
+            <ee:variables>
+                <ee:set-variable variableName="contacts"><![CDATA[%dw 2.0
+output application/java
+---
+vars.iDoc.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
+    FirstName   : $.NAMEV,
+    LastName    : $.NAME1
+}]]></ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+    </munit:before-test>
+    <munit:test name="test-suite-Test" description="MUnit Test" doc:id="9d433b0d-dfb2-4322-bc14-823941d23bfe">
+        <munit:execution>
+            <set-payload value="#[vars.iDoc]" doc:name="Set IDoc message to Payload" doc:id="5ceee0c9-3d58-4459-affe-2c69801e180b"
+                mimeType="application/xml" />
+            <flow-ref doc:name="Call businessLogicFlow" doc:id="dfbdfc78-2f46-47bc-9606-83e4ab2d41b0" name="businessLogicFlow" />
+			<scripting:execute engine="groovy" doc:name="Sleep for 30s until the processing is completed" doc:id="da37ea08-7af6-413d-b2c2-2c67350d6c23">
+                <scripting:code>sleep(30000)</scripting:code>
+            </scripting:execute>
+			<salesforce:query-single doc:name="Query Contact" doc:id="83afa053-c913-4929-9f1f-cad322cbe9a0" config-ref="Salesforce" target="sfdcContact">
+				<salesforce:salesforce-query>Select Id, LastName from Contact where LastName = ':lastName' and FirstName = ':firstName'</salesforce:salesforce-query>
+				<salesforce:parameters><![CDATA[#[output application/java
+---
+{
+	"lastName" : vars.contacts[0].LastName,
+	"firstName" : vars.contacts[0].FirstName
+}]]]></salesforce:parameters>
+			</salesforce:query-single>
+        </munit:execution>
+        <munit:validation>
+			<munit-tools:assert-that doc:name="Assert that Contact was added to Salesforce" doc:id="ceb4fac0-195a-4685-9195-975199b635c2" expression="#[vars.sfdcContact.LastName]" is="#[MunitTools::equalTo(vars.contacts[0].LastName)]" message="Contact wasn't added to Salesforce"/>
+			<munit-tools:verify-call doc:name="Verify salesforce:upsert-bulk call" doc:id="b46cfb93-3283-40e6-8d5a-a1deb3b004a0"
+                processor="salesforce:upsert-bulk" times="1" />
+        </munit:validation>
+    </munit:test>
+    <munit:after-test name="test-suite-After_Test" description="After tests actions" doc:id="96716795-3697-4066-8f38-3bf9adbc8867">
+ 		<salesforce:delete doc:name="Delete test contacts" doc:id="780f44cc-847f-48c1-b783-1014529d3d10" config-ref="Salesforce">
+			<salesforce:delete-ids ><![CDATA[#[[vars.sfdcContact.Id]]]]></salesforce:delete-ids>
+		</salesforce:delete>
+	</munit:after-test>
+</mule>
