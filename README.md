@@ -9,11 +9,11 @@
 This template is subject to the conditions of the <a href="https://s3.amazonaws.com/templates-examples/AnypointTemplateLicense.pdf">MuleSoft License Agreement</a>. Review the terms of the license before downloading and using this template. You can use this template for free with the Mule Enterprise Edition, CloudHub, or as a trial in Anypoint Studio. 
 # Use Case
 <!-- Use Case (start) -->
-This Anypoint Template should serve as a foundation for setting an online sync of Contacts from SAP to Salesforce in manner of push notification. Every time there is a new Contact or a change in an already existing one, SAP will send the IDoc with it to the running template which will update/create a Contact in the Salesforce target instance.
+This Anypoint template serves as a foundation for setting an online sync of Contacts from SAP to Salesforce in manner of push notification. Every time there is a new Contact or a change in an already existing one, SAP will send the IDoc with it to the running template which will update/create a Contact in the Salesforce target instance.
 
 Requirements have been set not only to be used as examples, but also to establish a starting point to adapt your integration to your requirements.
 
-As implemented, this Anypoint Template leverages the [Batch Module](http://www.mulesoft.org/documentation/display/current/Batch+Processing). The batch job is divided in *Process* and *On Complete* stages.
+As implemented, this template leverages the Mule batch module. The batch job is divided in *Process* and *On Complete* stages.
 
 The integration is triggered by an inbound SAP endpoint listening for incoming IDOC **DEBMAS01** messages including information about Customer's Contacts. This XML is passed to the batch process and transformed to a Salesforce Contact.
 
@@ -27,11 +27,11 @@ This functionality relies on a standard BAPI for retrieving details about custom
 <!-- Default Considerations (end) -->
 
 <!-- Considerations (start) -->
-To make this Anypoint Template run, there are certain preconditions that must be considered.
-All of them deal with the preparations in both source (SAP) and destination (SFDC) systems, that must be made in order for all to run smoothly.
+To make this template run, there are certain preconditions that must be considered.
+All of them deal with the preparations in both source (SAP) and destination (Salesforce) systems, that must be made for the template to run smoothly.
 **Failing to do so could lead to unexpected behavior of the template.**
 
-Before using this Anypoint Template, you may want to check out this [Documentation Page](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP), that will teach you how to work
+Before using this template, you may want to check out this [Documentation Page](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP), that will teach you how to work
 with SAP and Anypoint Studio.
 
 ## Disclaimer
@@ -110,7 +110,7 @@ After you import your template into Anypoint Studio, follow these steps to run i
 + Inside the dialog, select Environment and set the variable `mule.env` to the value `dev`.
 + Click `Run`.
 <!-- Running on Studio (start) -->
-In order to make this Anypoint Template run on Mule Studio there are a few extra steps that needs to be made.
+In order to make this template run on Mule Studio there are a few extra steps that needs to be made.
 Please check this Documentation Page:
 
 + [Enabling Your Studio Project for SAP](http://www.mulesoft.org/documentation/display/current/SAP+Connector#SAPConnector-EnablingYourStudioProjectforSAP)
@@ -139,7 +139,7 @@ To use this template, configure properties such as credentials, configurations, 
 **Application Configuration**
 + page.size `200`
 
-**SAP Connector configuration**
+**SAP Connector Configuration**
 
 + sap.jco.ashost `your.sap.address.com`
 + sap.jco.user `SAP_USER`
@@ -148,7 +148,7 @@ To use this template, configure properties such as credentials, configurations, 
 + sap.jco.client `800`
 + sap.jco.lang `EN`
 
-**SAP Endpoint configuration**
+**SAP Endpoint Configuration**
 
 + sap.jco.operationtimeout `10000`
 + sap.jco.connectioncount `2`
@@ -156,7 +156,7 @@ To use this template, configure properties such as credentials, configurations, 
 + sap.jco.gwservice `sapgw14`
 + sap.jco.idoc.programid `PROGRAM_ID`
 
-**SalesForce Connector configuration**
+**SalesForce Connector Configuration**
 
 + sfdc.username `bob.dylan@sfdc`
 + sfdc.password `DylanPassword123`
@@ -183,14 +183,14 @@ calculated using the formula:
 
 Being X the number of Contacts to be synchronized on each run.
 
-Multiplication by 3 is because for every user if account.sync.policy is set to value **syncAccounts** for every contact will be checked
+Multiplication by 3 is because for every user if account.sync.policy is set to value **syncAccounts** for every contact is checked
 if an account with matching name exists in Salesforce and if not it will be created.
 
 The division by ${page.size} is because contacts are gathered in groups
 of ${page.size} for each Upsert API Call in the commit step.
 
 For instance if 10 records are fetched from origin instance, then 31 api
-calls to SFDC will be made (worst case scenario). If the account in Salesforce alerady exists or account synchronization
+calls to Salesforce will be made (worst case scenario). If the account in Salesforce alerady exists or account synchronization
 is disabled, there will be fewer API calls made.
 <!-- API Calls (end) -->
 
