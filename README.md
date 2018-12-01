@@ -154,31 +154,30 @@ To use this template, configure properties such as credentials, configurations, 
 + sfdc.password `DylanPassword123`
 + sfdc.securityToken `avsfwCUl7apQs56Xq2AKi3X`
 
-**Policy for creating accounts in SF syncAccount, doNotCreateAccount**
+**Policy for creating accounts in Salesforce syncAccount, doNotCreateAccount**
 
 + account.sync.policy `syncAccount`
 
 **Note:** The property **account.sync.policy** can take any of the two following values:
 
 + **doNotCreateAccount**: Application does nothing to the account and just moves the contact over.
-+ **syncAccount**: Tries to create the contact's account if it's not pressent in the Salesforce instance.
++ **syncAccount**: Tries to create the contact's account if it's not present in the Salesforce instance.
 <!-- Application Configuration (end) -->
 
 # API Calls
 <!-- API Calls (start) -->
 SalesForce imposes limits on the number of API calls that can be made.
-Therefore calculating this amount may be an important factor to
-consider. 
+Therefore calculating this amount may be an important factor to consider. 
 
 The template calls to the API can be calculated using the formula:
 
 **X * 3 + X / ${page.size}** -- Where X is the number of contacts to synchronize on each run.
 
-Multiply by 3 because for every user if account.sync.policy is set to the **syncAccounts** value, then every contact is checked if an account with a matching name exists in Salesforce. If not. it's created.
+Multiply by 3 because for every user if account.sync.policy is set to the **syncAccounts** value, then every contact is checked if an account with a matching name exists in Salesforce. If not, it's created.
 
 Divide by ${page.size} because contacts are gathered in groups of ${page.size} for each Upsert API call in the commit step.
 
-For instance if 10 records are fetched from origin instance, then 31 API calls to Salesforce are made (worst case scenario). If the account in Salesforce alerady exists or account synchronization is disabled, there will be fewer API calls made.
+For instance if 10 records are fetched from origin instance, then 31 API calls to Salesforce are made (worst case scenario). If the account in Salesforce already exists or account synchronization is disabled, there will be fewer API calls made.
 <!-- API Calls (end) -->
 
 # Customize It!
