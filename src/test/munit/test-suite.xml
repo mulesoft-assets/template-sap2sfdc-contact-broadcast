@@ -12,8 +12,9 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
 http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
     <munit:config name="test-suite.xml" />
+    
     <configuration-properties doc:name="Configuration properties" doc:id="4d1cfd27-37cf-4e7e-b110-8f153d066ea4" file="mule.test.properties" />
-    <configuration-properties doc:name="Configuration properties" doc:id="3ada2881-d4b2-4e61-af85-f0d435105cb1" file="common.properties" />
+    
     <munit:before-test name="test-suite-Before_Test" description="Before tests actions" doc:id="83bc59fc-7563-43f4-bb58-99bb38962eac">
         <set-variable value="#[MunitTools::getResourceAsString('idoc.xml')]" doc:name="Set iDoc message to variable" doc:id="36b8d2e5-561c-4c14-917c-a3b3584689a4"
             variableName="iDoc" mimeType="application/xml" />
