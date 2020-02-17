@@ -7,7 +7,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 http://www.mulesoft.org/schema/mule/sap http://www.mulesoft.org/schema/mule/sap/current/mule-sap.xsd">
     <flow name="triggerFlow" doc:id="aff4106d-d2f6-4366-940a-a380dcb1cf73">
     
-        <sap:document-source doc:name="Document source" doc:id="1b48ee7a-5ac6-437e-94d3-b434589eecc3" config-ref="SAP_Inbound"
+        <sap:document-listener doc:name="Document source" doc:id="1b48ee7a-5ac6-437e-94d3-b434589eecc3" config-ref="SAP_Config"
             gatewayHost="${sap.jco.gwhost}" gatewayService="${sap.jco.gwservice}" programID="${sap.jco.idoc.programid}" connectionCount="${sap.jco.connectioncount}"
             operationTimeout="${sap.jco.operationtimeout}" />
 
