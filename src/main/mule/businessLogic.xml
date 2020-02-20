@@ -72,8 +72,8 @@ output application/xml
 }]]></ee:set-payload>
                         </ee:message>
                     </ee:transform>
-                    <sap:execute-synchronous-remote-function-call doc:name="Get Customer by Number"
-                        doc:id="5fd11f26-46a9-4baf-9777-774ce624f21a" config-ref="SAP_Outbound" key="BAPI_CUSTOMER_GETDETAIL2" />
+                    <sap:sync-rfc doc:name="Get Customer by Number"
+                        doc:id="5fd11f26-46a9-4baf-9777-774ce624f21a" config-ref="SAP_Config" key="BAPI_CUSTOMER_GETDETAIL2" />
                     <ee:transform doc:name="SAP Customer to Salesforce Account" doc:id="e3e8f3bf-9abf-474c-ad48-5ae7b0a230b1">
                         <ee:message>
                         </ee:message>

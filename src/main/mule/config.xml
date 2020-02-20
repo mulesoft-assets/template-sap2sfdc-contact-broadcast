@@ -7,17 +7,11 @@
     <configuration-properties file="common.properties" doc:id="136ce488-ae73-474e-bb7d-1bce056e3686" doc:name="Configuration properties" />
     <configuration-properties file="mule.${mule.env}.properties" doc:id="ae68708a-f1cf-4533-873c-7d7a75e6dfd2" doc:name="Configuration properties" />
 
-    <sap:inbound-config name="SAP_Inbound" doc:id="30d4daa4-098f-4c57-abf2-df25877f2a53" doc:name="SAP Inbound">
-        <sap:simple-connection-provider-connection applicationServerHost="${sap.jco.ashost}" client="${sap.jco.client}"
-            language="${sap.jco.lang}" password="${sap.jco.passwd}" systemNumber="${sap.jco.sysnr}" username="${sap.jco.user}" />
-    </sap:inbound-config>
-
-    <sap:outbound-config name="SAP_Outbound" doc:id="05a0a973-2c03-4cea-8247-fda5959f14e9" doc:name="SAP Outbound">
-        <sap:simple-connection-provider-connection applicationServerHost="${sap.jco.ashost}" client="${sap.jco.client}"
-            language="${sap.jco.lang}" password="${sap.jco.passwd}" systemNumber="${sap.jco.sysnr}" username="${sap.jco.user}" />
-    </sap:outbound-config>
-
     <salesforce:sfdc-config name="Salesforce" doc:id="635cce3a-8d68-4c3d-b12a-5c1e09bbb442" doc:name="Salesforce">
         <salesforce:basic-connection password="${sfdc.password}" securityToken="${sfdc.securityToken}" username="${sfdc.username}" />
     </salesforce:sfdc-config>
+    <sap:sap-config name="SAP_Config" doc:name="SAP Config" doc:id="68fb1aaa-84e3-4abd-b584-5f7efbc227d5" >
+        <sap:simple-connection-provider-connection applicationServerHost="${sap.jco.ashost}" client="${sap.jco.client}"
+            language="${sap.jco.lang}" password="${sap.jco.passwd}" systemNumber="${sap.jco.sysnr}" username="${sap.jco.user}" />
+    </sap:sap-config>
 </mule>
