@@ -26,7 +26,7 @@ payload.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
         <batch:job jobName="syncContactBatch" doc:id="204892ae-0d97-4326-beae-310c8d52b7a6">
             <batch:process-records>
                 <batch:step name="getContactInSalesforceStep" doc:id="89713774-362a-4e92-9bdc-41e31802bf38">
-                    <salesforce:query-single doc:name="Query Salesforce for Contact" doc:id="81912bc4-8279-483a-97a1-002b26192e57"
+                    <salesforce:query doc:name="Query Salesforce for Contact" doc:id="81912bc4-8279-483a-97a1-002b26192e57"
                         config-ref="Salesforce" target="IdInSFDC">
                         <salesforce:salesforce-query>Select Id from Contact where LastName = ':lastName' and FirstName = ':firstName'
                         </salesforce:salesforce-query>
@@ -36,7 +36,7 @@ payload.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
 	"lastName" : payload.LastName,
 	"firstName" : payload.FirstName
 }]]]></salesforce:parameters>
-                    </salesforce:query-single>
+                    </salesforce:query>
                     <ee:transform doc:name="Save contact Id" doc:id="a9ed90b8-10d2-46e9-9026-ee182c8098d4">
                         <ee:message>
                         </ee:message>
@@ -89,7 +89,7 @@ var export = payload.BAPI_CUSTOMER_GETDETAIL2.export
 }]]></ee:set-variable>
                         </ee:variables>
                     </ee:transform>
-                    <salesforce:query-single doc:name="Query Account in  Salesforce Instance Query single" doc:id="785fb66a-5c26-43b7-977d-30cff4ad8352"
+                    <salesforce:query doc:name="Query Account in  Salesforce Instance Query single" doc:id="785fb66a-5c26-43b7-977d-30cff4ad8352"
                         config-ref="Salesforce" target="sfAccount">
                         <salesforce:salesforce-query>SELECT Id FROM Account WHERE Name = ':customerName'</salesforce:salesforce-query>
                         <salesforce:parameters><![CDATA[#[output applicaton/java
@@ -97,13 +97,13 @@ var export = payload.BAPI_CUSTOMER_GETDETAIL2.export
 {
 	"customerName" : vars.sapCustomer.Name
 }]]]></salesforce:parameters>
-                    </salesforce:query-single>
+                    </salesforce:query>
                     <choice doc:name="Does the corresponding account need to be created in Salesforce?" doc:id="153b8209-a577-49ae-ac52-f62e3f68b878">
                         <when expression="#[isEmpty(vars.sfAccount)]">
-                            <salesforce:create-single doc:name="Create Account in Salesforce" doc:id="db81cee6-2efd-4ee1-b153-63315d57de1c"
+                            <salesforce:create doc:name="Create Account in Salesforce" doc:id="db81cee6-2efd-4ee1-b153-63315d57de1c"
                                 config-ref="Salesforce" type="Account">
-                                <salesforce:record><![CDATA[#[vars.sapCustomer]]]></salesforce:record>
-                            </salesforce:create-single>
+                                <salesforce:records><![CDATA[#[vars.sapCustomer]]]></salesforce:records>
+                            </salesforce:create>
                             <ee:transform doc:name="Store new accountId" doc:id="9ad4464d-f459-456d-a190-350dc18d8423">
                                 <ee:message>
                                     <ee:set-payload><![CDATA[%dw 2.0
@@ -131,9 +131,13 @@ vars.recordPayload ++ {AccountId : vars.sfAccount.Id}]]></ee:set-payload>
                 </batch:step>
                 <batch:step name="upsertContactInSalesforceStep" doc:id="78a74ab4-9b91-416d-985a-acda2ac377eb">
                     <batch:aggregator doc:name="Batch Aggregator" doc:id="1ad86a98-643e-494a-a90a-32daab0b03cc" size="${page.size}">
-                        <salesforce:upsert-bulk type="Contact" doc:name="Upsert Contact in Salesforce" doc:id="ed320bd4-6a73-4041-9707-37bb8bbc471a"
-                            config-ref="Salesforce" externalIdFieldName="Id">
-                        </salesforce:upsert-bulk>
+                        <set-variable value="#[payload]" doc:name="Set Variable Sfdc Contact" doc:id="40adee11-4ab5-4e64-8020-0a6a828b738f" variableName="sfdcContact"/>
+                        <salesforce:create-job doc:name="Upsert Contact in Salesforce Job" doc:id="f76dae85-5005-413c-b971-cf90680143fd" config-ref="Salesforce" operation="upsert" type="Contact">
+                            <salesforce:create-job-request><![CDATA[#[externalIdFieldName: "Id"]]]></salesforce:create-job-request>
+                        </salesforce:create-job>
+                        <salesforce:create-batch doc:name="Upsert Contact in Salesforce" doc:id="e058cd6d-816d-4d34-93d8-46b13bf6ebab" config-ref="Salesforce" jobInfoBatch="#[payload]">
+                            <salesforce:objects ><![CDATA[#[vars.sfdcContact]]]></salesforce:objects>
+                        </salesforce:create-batch>
                         <logger level="INFO" doc:name="Upsert contacts in Salesforce" doc:id="7236a9f6-7aaf-4f40-94e3-e477a132e88d"
                             message="Upsert result: #[output application/json --- payload] " />
                     </batch:aggregator>
