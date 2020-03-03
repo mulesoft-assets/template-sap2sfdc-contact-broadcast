@@ -51,7 +51,7 @@ vars.iDoc.DEBMAS01.IDOC.E1KNA1M.*E1KNVKM map {
 			</salesforce:query>
         </munit:execution>
         <munit:validation>
-            <munit-tools:assert-that doc:name="Assert that Contact was added to Salesforce" doc:id="ceb4fac0-195a-4685-9195-975199b635c2" expression="#[vars.sfdcContact.LastName]" is="#[MunitTools::equalTo(vars.contacts[0].LastName)]" message="Contact wasn't added to Salesforce"/>
+            <munit-tools:assert-that doc:name="Assert that Contact was added to Salesforce" doc:id="ceb4fac0-195a-4685-9195-975199b635c2" expression="#[vars.sfdcContact[0].LastName]" is="#[MunitTools::equalTo(vars.contacts[0].LastName)]" message="Contact wasn't added to Salesforce"/>
 			<munit-tools:verify-call doc:name="Verify salesforce:create-batch call" doc:id="b46cfb93-3283-40e6-8d5a-a1deb3b004a0"
                 processor="salesforce:create-batch" times="1" >
                 <munit-tools:with-attributes >
